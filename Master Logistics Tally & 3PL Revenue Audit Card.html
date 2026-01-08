@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Logistics Tally & 3PL Revenue Audit Card</title>
+  <link rel="stylesheet" href="Master Logistics Tally & 3PL Revenue Audit Card.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- ========== HEADER SECTION ========== -->
+    <div class="header-container">
+      <div class="header-left">
+        <div class="location-badge">01.100.10.1</div>
+        <div class="print-time">Print time: 12/23/25 02:11:13 PM</div>
+      </div>
+
+      <h1>Master Logistics Tally & 3PL Revenue Audit Card</h1>
+
+      <div class="header-images">
+        <div class="header-thumb">
+          <img src="pallet_diagram.png" alt="Pallet Diagram">
+          <div class="header-caption">8 × 3</div>
+        </div>
+        <div class="header-thumb">
+          <img src="location_diagram.png" alt="Location Diagram">
+          <div class="header-caption">2 Height</div>
+        </div>
+        <img src="qr.png" alt="QR Code" style="margin-left: auto;">
+      </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT GRID ========== -->
+    <div class="grid-two">
+
+      <!-- ========== INBOUND SECTION ========== -->
+      <div class="section">
+        <h2>Part 1: INBOUND <counttext>Total Inbound:</counttext><count> 2 </count></h2>
+
+        <!-- A. Shipment Data -->
+        <h3>A. Shipment Data</h3>
+        <table>
+          <tr>
+            <td>Customer</td>
+            <td><span class="important">TCL North America</span></td>
+            <td>Carrier</td>
+            <td><span class="important">Sample Carrier</span></td>
+            <!-- <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">FedEx</span></span> -->
+          </tr>
+          <tr>
+            <td>DN No.</td>
+            <td><span class="important">DN-9527</span></td>
+            <td>PO Number</td>
+            <td><span class="important">1233TREANSFER1</span></td>
+          </tr>
+          <tr>
+            <td>Supplier/Vendor</td>
+            <td>TCL North America</td>
+            <td>Arrival Time</td>
+            <td><span class="important">12/23/25 01:26:24 PM</span></td>
+          </tr>
+        </table>
+
+        <!-- B. Freight Profile -->
+        <h3>B. Freight Profile</h3>
+        <table>
+          <tr>
+            <th>SKU</th>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>UOM</th>
+          </tr>
+          <tr>
+            <td>43Q31K</td>
+            <td>43Q31K</td>
+            <td><span class="important">600</span></td>
+            <td>EA</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td>Weight (lbs)</td>
+            <td>19.7 LB</td>
+            <td>EA Dimension (L×W×H)</td>
+            <td>42.3 × 4.8 × 25.4 in</td>
+          </tr>
+          <tr>
+            <td>Pallet Weight (lbs)</td>
+            <td>1150 lb</td>
+            <td>Pallet Dimension (L×W×H)</td>
+            <td>48 x 40 x 76.2 in</td>
+          </tr>
+          <tr>
+            <td>TiHi</td>
+            <td>8 × 3</td>
+            <td>Pallet Count</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"></span>Temp.</td>
+            <td colspan="3" style="background: var(--highlight);">
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Ambient</span></span>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Chill</span></span>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Frozen</span></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Hazmat Status</td>
+            <td colspan="3">Non-hazmat</td>
+          </tr>
+          <tr>
+            <td><span class="important">Stack Height</td>
+            <td colspan="3"><span class="important">2 Height Plts</td>
+          </tr>
+        </table>
+
+        <!-- C. Inbound Accessorials -->
+        <h3>C. Inbound Accessorials</h3>
+        <table>
+          <tr>
+            <th>Worker Type</th>
+            <th>Qty/Hrs</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Unload</span></span></td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Labor</span></span></td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">General</span></span></td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Materials</span></span></td>
+            <td colspan="2">
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Pallet _________________</span></span> <br>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Stretch Wrap</span></span>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Corner Bd</span></span>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">UCC Label</span></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ========== OUTBOUND SECTION ========== -->
+      <div class="section">
+        <h2>Part 2: OUTBOUND <counttext>Total Outbound:</counttext><count> 3 </count></h2>
+
+        <!-- A. Order Data -->
+        <h3>A. Order Data</h3>
+        <table>
+          <tr>
+            <td>PO No.</td>
+            <td><span class="important">PO-78421</span></td>
+            <td>Expected Qty</td>
+            <td><span class="important">720</span></td>
+          </tr>
+          <tr>
+            <td>Ref. No</td>
+            <td><span class="important">REF-ACME-00123</span></td>
+            <td>Customer SO NO.</td>
+            <td><span class="important">SO-45678</span></td>
+          </tr>
+          <tr>
+            <td>Appointment Time</td>
+            <td><span class="important">12/24/25 10:30 AM</span></td>
+            <td>Retailer</td>
+            <td><span class="important">Costco</span></td>
+          </tr>
+          <tr>
+            <td>Trailer/Seal</td>
+            <td>TR12345 / SE98765</td>
+            <td>Carrier(SCAC)</td>
+            <td><span class="important">AMZN</span></td>
+          </tr>
+          <tr>
+            <td>Exp Qty</td>
+            <td><span class="important">720</span></td>
+            <td>UOM</td>
+            <td>EA</td>
+          </tr>
+          <tr>
+            <td>DN No.</td>
+            <td><span class="important">DN-10021</span></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <!-- B. Outbound Compliance -->
+        <h3>B. Outbound Compliance</h3>
+        <table>
+          <tr>
+            <td colspan="2"><span class="important">TCL North America, Costco, AMZN </td>
+            <td><span class="manual-check"></span>Packaging Standards Met</td>
+            <td class="checkbox"><span class="manual-check"></span>☐</td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"></span>Documentation Complete</td>
+            <td class="checkbox"><span class="manual-check"></span>☐</td>
+            <td><span class="manual-check"></span>Retailer Compliance Met</td>
+            <td class="checkbox"><span class="manual-check"></span>☐</td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"></span>Quantity Match</td>
+            <td class="checkbox"><span class="manual-check"></span>☐</td>
+            <td><span class="manual-check"></span>Pallet Quantity Match</td>
+            <td class="checkbox"><span class="manual-check"></span>☐</td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"></span>Not Expired</td>
+            <td class="checkbox"><span class="manual-check"></span>☐</td>
+            <td><span class="manual-check"></span>No Damage</td>
+            <td class="checkbox"><span class="manual-check"></span>☐</td>
+          </tr>
+        </table>
+
+        <!-- C. Outbound Accessorials -->
+        <h3>C. Outbound Accessorials</h3>
+        <table>
+          <tr>
+            <th>Worker Type</th>
+            <th>Qty/Hrs</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Load</span></span></td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Labor</span></span></td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">General</span></span></td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Materials</span></span></td>
+            <td colspan="2">
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Pallet _________________</span></span> <br>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Stretch Wrap</span></span>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Corner Bd</span></span>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">UCC Label</span></span>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Legend/Notes -->
+        <table class="footnote-table">
+          <tr>
+            <th colspan="2">Note</th>
+          </tr>
+          <tr>
+            <td>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Manual</span></span>
+            </td>
+            <td>
+              Cells highlighted indicate items that require auditor verification or manual action.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="important">Important</span>
+            </td>
+            <td>
+              Emphasized values or critical information to review carefully.
+            </td>
+          </tr>
+        </table>
+
+        <!-- SOP and Notifications (commented out) -->
+        <!-- <table class="footnote-table">
+          <tr>
+            <th>SOP (Standard Operating Procedures)</th>
+            <th>Notifications</th>
+          </tr>
+          <tr>
+            <td>
+              • Verify documentation and retailer compliance prior to loading.<br>
+              • Confirm temperature profile (Ambient/Chill/Frozen) and handling requirements.<br>
+              • Match expected quantity and pallet count; resolve discrepancies before release.<br>
+              • Inspect packaging, damage, and expiration/lot details.<br>
+              • Record stack height and any accessorial services performed.
+            </td>
+            <td>
+              • Qty mismatch &gt; 5%: notify supervisor and hold shipment pending review.<br>
+              • Packaging standards not met: mark as Manual Check and inform 3PL immediately.<br>
+              • Hazmat discovered: stop, follow safety SOP, escalate to HSE/Compliance.<br>
+              • Print preview: ensure highlights are visible in grayscale for audits.
+            </td>
+          </tr>
+        </table> -->
+      </div>
+
+    </div>
+
+    <!-- ========== LP GRID SECTION ========== -->
+    <div class="section">
+      <div class="lp-grid">
+        <table class="footnote-table">
+          <tr>
+            <th>ILP</th>
+            <th>Qty</th>
+            <th>Lot No.</th>
+            <th>Exp</th>
+          </tr>
+          <tr>
+            <td>ILP-5912984</td>
+            <td>30</td>
+            <td>NTM202328B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>NTM202329B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912986</td>
+            <td>30</td>
+            <td>NTM202330B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912987</td>
+            <td>30</td>
+            <td>NTM202331B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912988</td>
+            <td>30</td>
+            <td>NTM202332B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912989</td>
+            <td>30</td>
+            <td>NTM202333B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912990</td>
+            <td>30</td>
+            <td>NTM202334B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912991</td>
+            <td>30</td>
+            <td>NTM202335B</td>
+            <td>No Exp</td>
+          </tr>
+        </table>
+
+        <table class="footnote-table">
+          <tr>
+            <th>ILP</th>
+            <th>Qty</th>
+            <th>Lot No.</th>
+            <th>Exp</th>
+          </tr>
+          <tr>
+            <td>ILP-5912996</td>
+            <td>30</td>
+            <td>NTM202340B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912997</td>
+            <td>30</td>
+            <td>NTM202341B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912998</td>
+            <td>30</td>
+            <td>NTM202342B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912999</td>
+            <td>30</td>
+            <td>NTM202343B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5913000</td>
+            <td>30</td>
+            <td>NTM202344B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5913001</td>
+            <td>30</td>
+            <td>NTM202345B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5913002</td>
+            <td>30</td>
+            <td>NTM202346B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5913003</td>
+            <td>30</td>
+            <td>NTM202347B</td>
+            <td>No Exp</td>
+          </tr>
+        </table>
+
+        <table class="footnote-table">
+          <tr>
+            <th>ILP</th>
+            <th>Qty</th>
+            <th>Lot No.</th>
+            <th>Exp</th>
+          </tr>
+          <tr>
+            <td>ILP-5913004</td>
+            <td>30</td>
+            <td>NTM202348B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5913005</td>
+            <td>30</td>
+            <td>NTM202349B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5913006</td>
+            <td>30</td>
+            <td>NTM202350B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5913007</td>
+            <td>30</td>
+            <td>NTM202351B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912992</td>
+            <td>30</td>
+            <td>NTM202336B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912993</td>
+            <td>30</td>
+            <td>NTM202337B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912994</td>
+            <td>30</td>
+            <td>NTM202338B</td>
+            <td>No Exp</td>
+          </tr>
+          <tr>
+            <td>ILP-5912995</td>
+            <td>30</td>
+            <td>NTM202339B</td>
+            <td>No Exp</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
