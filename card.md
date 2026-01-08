@@ -4,25 +4,31 @@
 ## Part 1: INBOUND
 
 ### A. Shipment Data
-- **Arrival Date/Time:** _______________
-- **Carrier:** _______________
-- **Tracking Number:** _______________
-- **PO Number:** _______________
-- **Supplier/Vendor:** _______________
-- **Expected Quantity:** _______________
+| Field | Value |
+|-------|-------|
+| Arrival Date/Time | |
+| Carrier | |
+| Tracking Number | |
+| PO Number | |
+| Supplier/Vendor | |
+| Expected Quantity | |
 
 ### B. Freight Profile
-- **Weight (lbs):** _______________
-- **Dimensions (L×W×H):** _______________
-- **Pallet Count:** _______________
-- **Freight Class:** _______________
-- **Special Handling:** _______________
+| Field | Value |
+|-------|-------|
+| Weight (lbs) | |
+| Dimensions (L×W×H) | |
+| Pallet Count | |
+| Freight Class | |
+| Special Handling | |
 
 ### C. Inbound Accessorials
-- **Dock Handling Fee:** _______________
-- **Hazmat Surcharge:** _______________
-- **Temperature Control:** _______________
-- **Other Charges:** _______________
+| Field | Value |
+|-------|-------|
+| Dock Handling Fee | |
+| Hazmat Surcharge | |
+| Temperature Control | |
+| Other Charges | |
 
 ---
 
@@ -39,31 +45,43 @@
 ## Part 3: OUTBOUND
 
 ### A. Order Data
-- **Order Number:** _______________
-- **Order Date:** _______________
-- **Destination:** _______________
-- **Recipient:** _______________
+| Field | Value |
+|-------|-------|
+| Order Number | |
+| Order Date | |
+| Destination | |
+| Recipient | |
 
 ### B. Retailer Compliance Check
-- **Label Format Compliant:** ☐ Yes ☐ No
-- **Packaging Standards Met:** ☐ Yes ☐ No
-- **Documentation Complete:** ☐ Yes ☐ No
+| Requirement | Yes | No |
+|-------------|-----|-----|
+| Label Format Compliant | ☐ | ☐ |
+| Packaging Standards Met | ☐ | ☐ |
+| Documentation Complete | ☐ | ☐ |
 
 ### C. Outbound Accessorial
-- **Expedited Shipping Fee:** _______________
-- **Packaging Material Cost:** _______________
-- **Final Mile Delivery:** _______________
+| Field | Value |
+|-------|-------|
+| Expedited Shipping Fee | |
+| Packaging Material Cost | |
+| Final Mile Delivery | |
 
 ---
 
 ## Part 4: FINAL RELEASE & BILLING LOCK
 
-- **Audit Complete:** ☐ Yes ☐ No
-- **Total Billable Amount:** _______________
-- **Approved for Release:** ☐ Yes ☐ No
+| Field | Yes | No |
+|-------|-----|-----|
+| Audit Complete | ☐ | ☐ |
+| Approved for Release | ☐ | ☐ |
 
-**Authorized Signature:** _________________________ **Date:** ________
+| Item | Details |
+|------|---------|
+| Total Billable Amount | |
+| Authorized Signature | |
+| Date | |
+| Auditor Name (Print) | |
+| Title | |
+| Secondary Approval | |
+| Date | |
 
-**Auditor Name (Print):** _________________________ **Title:** ________
-
-**Secondary Approval:** _________________________ **Date:** ________

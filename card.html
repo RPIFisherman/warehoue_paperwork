@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Logistics Tally & 3PL Revenue Audit Card</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --text: #0f172a;
+      --muted: #6b7280;
+      --primary: #2564eb;
+      --highlight: #fff7cc;
+      --checkbox-text: #111827;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --caption: #475569;
+      --important-bg: #fff1e6;
+      --important-text: #1f2937;
+      --badge-bg: #fef3c7;
+      --badge-border: #f59e0b;
+      --checkdesc: #92400e;
+      --table-border-secondary: #eef1f4;
+      --table-head-bg: #f8fafc;
+      --table-row-alt: #fcfdff;
+      --table-row-hover: #f6faff;
+      --guideline: #cbd5e1;
+      --print-highlight: #d8d8d8;
+      --print-important-bg: #cfc7b8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 32px auto 48px;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      align-items: start;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--text);
+      margin: 0 0 24px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      font-size: 1.3rem;
+    }
+
+    .header-container {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0px;
+      width: 100%;
+    }
+
+    .header-container h1 {
+      justify-self: center;
+    }
+
+    .header-images {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .header-thumb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .header-caption {
+      font-size: 1rem;
+      color: var(--caption);
+      letter-spacing: 0.01em;
+    }
+
+    .lp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+
+    .header-images img[alt="QR Code"] {
+      margin-left: auto;
+      height: 100px;
+      width: auto;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0px 0px var(--shadow);
+    }
+
+    .header-images img {
+      height: 100px;
+      width: auto;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0px 0px var(--shadow);
+    }
+
+    .location-badge {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text);
+      background: var(--badge-bg);
+      border: 2px solid var(--badge-border);
+      padding: 6px 12px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px var(--shadow);
+      letter-spacing: 0.04em;
+    }
+
+    .section {
+      border: 1px solid var(--border);
+      padding: 1px 2px 2px;
+      margin: 0px 0 0px;
+      background-color: var(--card-bg);
+      border-radius: 5px;
+      box-shadow: 0 0px 0px rgba(0, 0, 0, 0.06);
+    }
+
+    .section h2 {
+      color: var(--text);
+      padding: 0;
+      margin: 0 0 0px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    counttext {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    count {
+      background: var(--primary);
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 0px 6px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      color: var(--muted);
+      margin: 0px 0 0px;
+      font-weight: 700;
+      font-size: 0.7rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: -1px 0 0px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0dvb;
+      overflow: hidden;
+    }
+
+    th, td {
+      /* padding: 10px 12px; */
+      padding: 1px 1.2px;
+      text-align: left;
+      border-bottom: 1px solid var(--table-border-secondary);
+      font-weight: 500;
+      font-size: 0.75rem;
+      border-right: 1px solid var(--table-border-secondary); 
+    }
+
+    /* Compact footnote table style for ILP labels */
+    .footnote-table {
+      border-radius: 6px;
+    }
+    .footnote-table th,
+    .footnote-table td {
+      font-size: 0.5rem;
+      padding: 0px 0px;
+      line-height: 1.1;
+    }
+    .footnote-table th {
+      font-size: 0.62rem;
+      letter-spacing: .01em;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    th {
+      background-color: var(--table-head-bg);
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      font-size: 0.8rem;
+    }
+
+    tr:nth-child(even) td { background-color: var(--table-row-alt); }
+    tr:hover td { background-color: var(--table-row-hover); }
+
+    td:empty {
+      min-height: 32px;
+      background-image: linear-gradient(to right, transparent 0, transparent 8px, var(--guideline) 8px, var(--guideline) 9px, transparent 9px);
+      background-size: 160px 1px;
+      background-repeat: no-repeat;
+      background-position: left 55%;
+    }
+
+    .checkbox {
+      text-align: center;
+      color: var(--checkbox-text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    /* Manual check emphasis */
+    .manual-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .checkdesc {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--checkdesc);
+    }
+
+    /* Important information emphasis */
+    .important {
+      background: var(--important-bg);
+      color: var(--important-text);
+      font-weight: 750;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+
+    td.checkbox {
+      background: var(--highlight);
+    }
+
+    /* Highlight entire cell containing manual-check UI */
+    td:has(> .manual-check){
+      background: var(--highlight) !important;
+    }
+    
+    th.checkbox {
+      background: var(--highlight);
+    }
+
+    /* Highlight header cells containing manual-check UI */
+    th:has(> .manual-check){
+      background: var(--highlight) !important;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 12px; }
+      table { font-size: 0.93rem; }
+      th, td { padding: 8px 10px; }
+    }
+
+    @media print {
+      @page { size: letter landscape; margin: 0.5in; }
+      body { background: var(--card-bg); }
+      .section { box-shadow: none; border-color: var(--guideline); }
+      .container { margin: 0; max-width: none; padding: 0; }
+      .grid-two { grid-template-columns: 1fr 1fr; gap: 12px; }
+      h1 { margin-bottom: 12px; font-size: 1.3rem; }
+
+      /* Improve grayscale visibility for manual checks and important info */
+      td.checkbox,
+      th.checkbox,
+      td:has(> .manual-check),
+      th:has(> .manual-check) {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact; /* For older Safari/Chrome engines */
+        background: var(--print-highlight) !important;
+      }
+
+      .important {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact; /* For older Safari/Chrome engines */
+        background: var(--print-important-bg) !important;
+        color: var(--text) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="header-container">
+    <div class="location-badge">01.100.10.1</div>
+    <h1>Master Logistics Tally & 3PL Revenue Audit Card</h1>
+    <div class="header-images">
+      <div class="header-thumb">
+        <img src="pallet_diagram.png" alt="Pallet Diagram">
+        <div class="header-caption">8 × 3</div>
+      </div>
+      <div class="header-thumb">
+        <img src="location_diagram.png" alt="Location Diagram">
+        <div class="header-caption">2 Height</div>
+      </div>
+      <!-- <img src="damage.jpg" alt="Damage Reference"> -->
+
+      <img src="qr.png" alt="QR Code" style="margin-left: auto;">
+    </div>
+  </div>
+
+  <div class="grid-two">
+    <div class="section">
+      <h2>Part 1: INBOUND <counttext>Total Inbound:</counttext><count> 1 </count></h2>
+    <h3>A. Shipment Data</h3>
+    <table>
+      <tr>
+        <td>Customer</td>
+        <td><span class="important">TCL North America</span></td>
+        <td>Carrier</td>
+        <td><span class="important">Sample Carrier</span></td>
+      <!-- <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">FedEx</span></span> -->
+      </tr>
+      <tr>
+        <td>DN No.</td>
+        <td><span class="important">DN-9527</span></td>
+        <td>PO Number</td>
+        <td><span class="important">1233TREANSFER1</span></td>
+      </tr>
+      <tr>
+        <td>Supplier/Vendor</td>
+        <td>TCL North America</td>
+        <td>Arrival Time</td>
+        <td><span class="important">12/23/25 01:26:24 PM</span></td>
+      </tr>
+    </table>
+
+    <h3>B. Freight Profile</h3>
+    <table>
+      <tr>
+      <th>SKU</th>
+      <th>Description</th>
+      <th>Qty</th>
+      <th>UOM</th>
+      </tr>
+      <tr>
+      <td>43Q31K</td>
+      <td>43Q31K</td>
+      <td><span class="important">600</span></td>
+      <td>EA</td>
+      </tr>
+      <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td>Weight (lbs)</td>
+        <td>19.7 LB</td>
+        
+        <td>EA Dimension (L×W×H)</td>
+        <td>42.3 × 4.8 × 25.4 in</td>
+      </tr>
+      <tr>
+        <td>Pallet Weight (lbs)</td>
+        <td>1150 lb</td>
+        <td>Pallet Dimension (L×W×H)</td>
+        <td>48 x 40 x 76.2 in</td>
+      </tr>
+      <tr>
+        <td>TiHi</td>
+        <td>8 × 3</td>
+        <td>Pallet Count</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td><span class="manual-check"></span>Temp.</td>
+        <td colspan="3" style="background: var(--highlight);">
+          <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Ambient</span></span>
+          <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Chill</span></span>
+          <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Frozen</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td>Hazmat Status</td>
+        <td colspan="3">Non-hazmat</td>
+      </tr>
+      <tr>
+        <td><span class="important">Stack Height</td>
+        <td colspan="3"><span class="important">2 Height Plts</td>
+      </tr>
+    </table>
+
+    <h3>C. Inbound Accessorials</h3>
+    <table>
+      <tr>
+      <th>Worker Type</th>
+      <th>Qty/Hrs</th>
+      <th>Notes</th>
+      </tr>
+      <tr>
+      <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Unload</span></span></td>
+      <td><span class="manual-check"></span></td>
+      <td><span class="manual-check"></span></td>
+      </tr>
+      <tr>
+      <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Labor</span></span></td>
+      <td><span class="manual-check"></span></td>
+      <td><span class="manual-check"></span></td>
+    </tr>
+    <tr>
+    <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">General</span></span></td>
+    <td><span class="manual-check"></span></td>
+    <td><span class="manual-check"></td>
+    </tr>
+      <tr>
+        <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Materials</span></span></td>
+        <td colspan="2">
+          <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Pallet
+              _________________</span></span> <br>
+          <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Stretch Wrap</span></span>
+          <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Corner Bd</span></span>
+          <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">UCC Label</span></span>
+      </tr>
+    </table>
+    
+    </div>
+    <div class="section">
+      <h2>Part 2: OUTBOUND <counttext>Total Outbound:</counttext>
+      <count> 3 </count></h2>
+    <h3>A. Order Data</h3>
+    <table>
+      <tr>
+        <td>PO No.</td>
+        <td><span class="important">PO-78421</span></td>
+        <td>Expected Qty</td>
+        <td><span class="important">720</span></td>
+      </tr>
+      <tr>
+        <td>Ref. No</td>
+        <td><span class="important">REF-ACME-00123</span></td>
+        <td>Customer SO NO.</td>
+        <td><span class="important">SO-45678</span></td>
+      </tr>
+      <tr>
+        <td>Appointment Time</td>
+        <td><span class="important">12/24/25 10:30 AM</span></td>
+        <td>Retailer</td>
+        <td><span class="important">Costco</span></td>
+      </tr>
+      <tr>
+        <td>Trailer/Seal</td>
+        <td>TR12345 / SE98765</td>
+        <td>Carrier(SCAC)</td>
+        <td><span class="important">AMZN</span></td>
+      </tr>
+      <tr>
+        <td>Exp Qty</td>
+        <td><span class="important">720</span></td>
+        <td>UOM</td>
+        <td>EA</td>
+      </tr>
+      <tr>
+        <td>DN No.</td>
+        <td><span class="important">DN-10021</span></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <h3>B. Outbound Compliance</h3>
+    <table>
+      <tr>
+      <td colspan="2"><span class="important">TCL North America, Costco, AMZN </td>
+      <td><span class="manual-check"></span>Packaging Standards Met</td>
+      <td class="checkbox"><span class="manual-check"></span>☐</td>
+      </tr>
+      <tr>
+      <td><span class="manual-check"></span>Documentation Complete</td>
+      <td class="checkbox"><span class="manual-check"></span>☐</td>
+      <td><span class="manual-check"></span>Retailer Compliance Met</td>
+      <td class="checkbox"><span class="manual-check"></span>☐</td>
+      </tr>
+      <tr>
+      <td><span class="manual-check"></span>Quantity Match</td>
+      <td class="checkbox"><span class="manual-check"></span>☐</td>
+      <td><span class="manual-check"></span>Pallet Quantity Match</td>
+      <td class="checkbox"><span class="manual-check"></span>☐</td>
+      </tr>
+      <tr>
+      <td><span class="manual-check"></span>Not Expired</td>
+      <td class="checkbox"><span class="manual-check"></span>☐</td>
+      <td><span class="manual-check"></span>No Damage</td>
+      <td class="checkbox"><span class="manual-check"></span>☐</td>
+      </tr>
+    </table>
+
+        <h3>C. Outbound Accessorials</h3>
+        <table>
+          <tr>
+            <th>Worker Type</th>
+            <th>Qty/Hrs</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Load</span></span></td>
+            
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Labor</span></span></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">General</span></span></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Materials</span></span></td>
+            <td colspan="2">
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Pallet _________________</span></span> <br>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Stretch Wrap</span></span>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Corner Bd</span></span>
+              <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">UCC Label</span></span>
+          </tr>
+        </table>
+        
+        <!-- <h2>Legend, SOP & Notifications</h2> -->
+
+          <!-- Legend for highlight styles -->
+          <table class="footnote-table">
+            <tr>
+              <th colspan="2">Note</th>
+            </tr>
+            <tr>
+              <td>
+                <span class="manual-check"><span class="checkbox">☐</span><span class="checkdesc">Manual</span></span>
+              </td>
+              <td>
+                Cells highlighted indicate items that require auditor verification or manual action.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="important">Important</span>
+              </td>
+              <td>
+                Emphasized values or critical information to review carefully.
+              </td>
+            </tr>
+          </table>
+
+          <!-- SOP and Notifications -->
+          <!-- <table class="footnote-table">
+            <tr>
+              <th>SOP (Standard Operating Procedures)</th>
+              <th>Notifications</th>
+            </tr>
+            <tr>
+              <td>
+                • Verify documentation and retailer compliance prior to loading.<br>
+                • Confirm temperature profile (Ambient/Chill/Frozen) and handling requirements.<br>
+                • Match expected quantity and pallet count; resolve discrepancies before release.<br>
+                • Inspect packaging, damage, and expiration/lot details.<br>
+                • Record stack height and any accessorial services performed.
+              </td>
+              <td>
+                • Qty mismatch &gt; 5%: notify supervisor and hold shipment pending review.<br>
+                • Packaging standards not met: mark as Manual Check and inform 3PL immediately.<br>
+                • Hazmat discovered: stop, follow safety SOP, escalate to HSE/Compliance.<br>
+                • Print preview: ensure highlights are visible in grayscale for audits.
+              </td>
+            </tr>
+          </table>
+        </div> -->
+  
+    
+      </div> <!-- End of Outbound Section -->
+    </div>
+
+        <div class="section">
+          <div class="lp-grid">
+            <table class="footnote-table">
+              <tr>
+                <th>ILP</th>
+                <th>Qty</th>
+                <th>Lot No.</th>
+                <th>Exp</th>
+              </tr>
+              <tr>
+                <td>ILP-5912984</td>
+                <td>30</td>
+                <td>NTM202328B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912985</td>
+                <td>30</td>
+                <td>NTM202329B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912986</td>
+                <td>30</td>
+                <td>NTM202330B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912987</td>
+                <td>30</td>
+                <td>NTM202331B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912988</td>
+                <td>30</td>
+                <td>NTM202332B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912989</td>
+                <td>30</td>
+                <td>NTM202333B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912990</td>
+                <td>30</td>
+                <td>NTM202334B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912991</td>
+                <td>30</td>
+                <td>NTM202335B</td>
+                <td>No Exp</td>
+              </tr>
+            </table>
+        
+            <table class="footnote-table">
+              <tr>
+                <th>ILP</th>
+                <th>Qty</th>
+                <th>Lot No.</th>
+                <th>Exp</th>
+              </tr>
+              <tr>
+                <td>ILP-5912996</td>
+                <td>30</td>
+                <td>NTM202340B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912997</td>
+                <td>30</td>
+                <td>NTM202341B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912998</td>
+                <td>30</td>
+                <td>NTM202342B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912999</td>
+                <td>30</td>
+                <td>NTM202343B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5913000</td>
+                <td>30</td>
+                <td>NTM202344B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5913001</td>
+                <td>30</td>
+                <td>NTM202345B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5913002</td>
+                <td>30</td>
+                <td>NTM202346B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5913003</td>
+                <td>30</td>
+                <td>NTM202347B</td>
+                <td>No Exp</td>
+              </tr>
+
+            </table>
+            <table class="footnote-table">  
+              <tr>
+                <th>ILP</th>
+                <th>Qty</th>
+                <th>Lot No.</th>
+                <th>Exp</th>
+              </tr>
+              <tr>
+                <td>ILP-5913004</td>
+                <td>30</td>
+                <td>NTM202348B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5913005</td>
+                <td>30</td>
+                <td>NTM202349B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5913006</td>
+                <td>30</td>
+                <td>NTM202350B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5913007</td>
+                <td>30</td>
+                <td>NTM202351B</td>
+                <td>No Exp</td>
+              </tr>
+                            <tr>
+                <td>ILP-5912992</td>
+                <td>30</td>
+                <td>NTM202336B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912993</td>
+                <td>30</td>
+                <td>NTM202337B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912994</td>
+                <td>30</td>
+                <td>NTM202338B</td>
+                <td>No Exp</td>
+              </tr>
+              <tr>
+                <td>ILP-5912995</td>
+                <td>30</td>
+                <td>NTM202339B</td>
+                <td>No Exp</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        </div>
+</body>
+
+</html>
