@@ -1,0 +1,2 @@
+# This file ensures the output directory is tracked in git
+# Generated files (PNG, ZPL, PDF) are gitignored but this preserves the directory structure
