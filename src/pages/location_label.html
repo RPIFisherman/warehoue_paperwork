@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location Label - E-Com Picking</title>
+    <link rel="stylesheet" href="../styles/print_form.css" />
+    <link rel="stylesheet" href="../styles/location_label.css" />
+  </head>
+
+  <body>
+    <button
+      class="print-button"
+      onclick="window.triggerPrint('location_label')"
+    >
+      🖨 Print
+    </button>
+    <div class="container">
+      <!-- HEADER: LOCATION CODE -->
+      <div class="location-header">
+        <div class="location-code">101.01.1.1</div>
+        <div class="location-breakdown">
+          Row 101 | Section 01 | Level 1 | Slot 1
+        </div>
+      </div>
+
+      <!-- LEFT COLUMN: BARCODE & IMAGE -->
+      <div class="left-column">
+        <div class="barcode-section">
+          <!-- <div class="barcode-label">Location Barcode</div> -->
+          <img
+            src="../../assets/images/101.01.1.1.gif"
+            alt="Location Barcode"
+            class="barcode-image"
+          />
+        </div>
+
+        <div class="image-section">
+          <div class="image-container">
+            <img
+              src="../../assets/images/43Q31K.webp"
+              alt="Item Image"
+              class="item-image"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: SKU, CUSTOMER, UOM, PICK OPTIONS -->
+      <div class="right-column">
+        <!-- SKU INFO -->
+        <div class="info-block sku-block">
+          <div class="sku-content">
+            <div class="info-label">SKU</div>
+            <div class="info-value">43Q31K</div>
+            <div class="info-label">Desc</div>
+            <div class="info-value">TV 43Q31K</div>
+          </div>
+          <div class="sku-qr">
+            <a href="http://localhost:3000" aria-label="Open label server">
+              <img src="../../assets/images/qr.png" alt="SKU QR Code" />
+            </a>
+          </div>
+        </div>
+
+        <!-- CUSTOMER INFO -->
+        <div class="info-block">
+          <div class="info-label">Customer</div>
+          <div class="info-value">TCL North America</div>
+        </div>
+
+        <!-- UOM & QUANTITIES GRID -->
+        <div class="info-block">
+          <div class="uom-grid">
+            <!-- Row 1: UOM | Shipping Rule -->
+            <div class="uom-item">
+              <span class="uom-label">UOM</span>
+              <span class="uom-value">EA</span>
+            </div>
+            <div class="uom-item">
+              <span class="uom-label">Rule</span>
+              <span class="uom-value">FIFO</span>
+            </div>
+
+            <!-- Row 2: TI | HI -->
+            <div class="uom-item">
+              <span class="uom-label">TI</span>
+              <span class="uom-value">8</span>
+            </div>
+            <div class="uom-item">
+              <span class="uom-label">HI</span>
+              <span class="uom-value">3</span>
+            </div>
+
+            <!-- Row 3: MIN | MAX -->
+            <div class="uom-item">
+              <span class="uom-label">MIN</span>
+              <span class="uom-value">5</span>
+            </div>
+            <div class="uom-item">
+              <span class="uom-label">MAX</span>
+              <span class="uom-value">24</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PICK OPTIONS -->
+        <div class="pick-section">
+          <div class="pick-option">
+            <input type="checkbox" id="case-pick" checked />
+            <label for="case-pick">EA</label>
+          </div>
+          <div class="pick-option">
+            <input type="checkbox" id="ea-pick" />
+            <label for="ea-pick">Case</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM: WARNING SECTION -->
+      <div class="bottom-section">
+        <div class="warning-icon">⚠️</div>
+        <div class="warning-text">MAX LOAD<br />2 Heights 2500 LBS</div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    window.triggerPrint = async function (type) {
+      try {
+        // Check if we're running locally (file:// protocol)
+        if (window.location.protocol === "file:") {
+          window.print();
+          return;
+        }
+
+        const res = await fetch(`/api/print?type=${type}`);
+        const json = await res.json();
+        if (!json.ok) throw new Error(json.error || "Print failed");
+        alert("Sent to printer");
+      } catch (e) {
+        alert("Print error: " + e.message);
+      }
+    };
+  </script>
+</html>

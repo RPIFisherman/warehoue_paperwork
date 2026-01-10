@@ -1,0 +1,235 @@
+<!-- Hold OSD Quarantine Card -->
+<!-- Modified by: Yuyang Gong -->
+<!-- Edited on: 01/08.2026 -->
+<!-- Jira:  -->
+<!-- This is a sheet that print to 4x6 ZPL Label Printer -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hold OSD Quarantine Card</title>
+  <link rel="stylesheet" href="../styles/print_form.css">
+  <link rel="stylesheet" href="../styles/hold_osd_quarantine.css">
+</head>
+
+<body>
+  <button class="print-button" onclick="window.triggerPrint('label')">🖨 Print</button>
+  <!-- SINGLE PAGE STICKER -->
+  <div class="container">
+    <!-- RED ALERT BANNER -->
+    <div class="alert-banner">
+      <span class="emoji">🛑</span> STOP - DO NOT MOVE <span class="emoji">🛑</span><br>
+      <span class="alert-subtitle">MASTER HOLD / OSD / QUARANTINE TAG</span>
+    </div>
+
+    <!-- TAG CONTROL -->
+    <div class="tag-control">
+      <div class="field">
+        <span>TAG#:</span>
+        <input type="text" placeholder="RN/DN-XXXX or TASK-XXXX or ADJUST-XXXX">
+      </div>
+      <div class="field">
+        <span>DATE:</span>
+        <input type="text" placeholder="MM/DD/YYYY HH:MM AM/PM">
+      </div>
+    </div>
+
+    <div class="page">
+      <!-- SECTION 1: IDENTIFICATION -->
+      <div class="section-header">IDENTIFICATION</div>
+      <div class="form-grid two-col">
+        <div class="form-field">
+          <label>SKU:</label>
+          <input type="text" placeholder="43Q31K">
+        </div>
+        <div class="form-field">
+          <label>QTY:</label>
+          <input type="text" placeholder="100">
+        </div>
+        <div class="form-field">
+          <label>CUSTOMER:</label>
+          <input type="text" placeholder="TCL North America">
+        </div>
+        <div class="form-field">
+          <label>PO#:</label>
+          <input type="text" placeholder="1233TRANSFER1">
+        </div>
+        <div class="form-field">
+          <label>LOC:</label>
+          <input type="text" placeholder="101.01.10.1">
+        </div>
+        <div class="form-field">
+          <label>UOM: &#9745 Ea ☐Cs ☐Plt</label>
+        </div>
+      </div>
+
+      <!-- SECTION 2: REASON FOR HOLD -->
+      <div class="section-header">REASON: INBOUND OSD</div>
+      <div class="checkbox-group two-col">
+        <div class="checkbox-item">
+          <input type="checkbox" id="osd-damaged">
+          <div class="checkbox-label"><strong>Damaged</strong></div>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="osd-concealed">
+          <div class="checkbox-label"><strong>Concealed DMG</strong></div>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="osd-short">
+          <div class="checkbox-label"><strong>Short</strong></div>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="osd-wrong">
+          <div class="checkbox-label"><strong>Wrong Item</strong></div>
+        </div>
+      </div>
+
+      <div class="section-header">REASON: RETURNS/RMA</div>
+      <div class="checkbox-group three-col">
+        <div class="checkbox-item">
+          <input type="checkbox" id="rma-refused">
+          <div class="checkbox-label"><strong>Refused</strong></div>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="rma-return">
+          <div class="checkbox-label"><strong>RMA Return</strong></div>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="rma-unauthorized">
+          <div class="checkbox-label"><strong>Unauthorized</strong></div>
+        </div>
+      </div>
+
+      <div class="section-header">REASON: INTERNAL HOLD</div>
+      <div class="checkbox-group three-col">
+        <div class="checkbox-item">
+          <input type="checkbox" id="internal-qa">
+          <div class="checkbox-label"><strong>QA/QC</strong></div>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="internal-nodata">
+          <div class="checkbox-label"><strong>No Data</strong></div>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="internal-damage">
+          <div class="checkbox-label"><strong>Warehouse DMG</strong></div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: LIABILITY & BILLING -->
+      <div class="critical-section">
+        <div class="critical-header">LIABILITY & BILLING</div>
+        <div class="checkbox-group two-col">
+          <div class="checkbox-item thick-border">
+            <input type="checkbox" id="liability-vendor">
+            <div class="checkbox-label"><strong>Vendor Fault</strong></div>
+          </div>
+          <div class="checkbox-item thick-border">
+            <input type="checkbox" id="liability-carrier">
+            <div class="checkbox-label"><strong>Carrier Fault</strong></div>
+          </div>
+          <div class="checkbox-item thick-border">
+            <input type="checkbox" id="liability-customer">
+            <div class="checkbox-label"><strong>Customer Fault</strong></div>
+          </div>
+          <div class="checkbox-item thick-border">
+            <input type="checkbox" id="liability-warehouse">
+            <div class="checkbox-label"><strong>Warehouse Fault</strong></div>
+          </div>
+        </div>
+
+        <div class="billable-title">BILLABLE SERVICES:</div>
+        <div class="checkbox-group three-col">
+          <div class="checkbox-item">
+            <input type="checkbox" id="bill-admin">
+            <div class="checkbox-label"><strong>System Manual Change</strong></div>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="bill-inspection">
+            <div class="checkbox-label"><strong>Inspection</strong></div>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="bill-photo">
+            <div class="checkbox-label"><strong>Photos</strong></div>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="bill-rework">
+            <div class="checkbox-label"><strong>Rework</strong></div>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="bill-disposal">
+            <div class="checkbox-label"><strong>Disposal</strong></div>
+          </div>
+          <div class="form-field spaced-top">
+            <label>QTY/HRS:</label>
+            <input type="text" placeholder="Enter quantity or hours">
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 4: DISPOSITION -->
+      <!-- <div class="section-header">DISPOSITION (Circle One)</div>
+      <div class="action-group">
+        <div class="action-button">
+          <div>✓</div>
+          <div>STOCK</div>
+        </div>
+        <div class="action-button">
+          <div>↩</div>
+          <div>RETURN</div>
+        </div>
+        <div class="action-button">
+          <div>🗑</div>
+          <div>TRASH</div>
+        </div>
+        <div class="action-button">
+          <div>🔧</div>
+          <div>REWORK</div>
+        </div>
+        <div class="action-button">
+          <div>🎁</div>
+          <div>DONATE</div>
+        </div>
+      </div> -->
+
+      <!-- FINAL AUTHORIZATION -->
+      <!-- <div style="margin-top: 1px; padding: 1px; border: 1px solid var(--osd-red); border-radius: 2px; background: #fff8f8;">
+        <div style="font-weight: 700; font-size: 0.5rem; margin-bottom: 1px; text-transform: uppercase; color: var(--osd-red);">AUTH SIGNATURE & DATE</div>
+        <div class="signature-block" style="background: white;">
+          <div class="signature-field">
+            <label>Name/Signature:</label>
+            <div class="signature-line"></div>
+          </div>
+          <div class="signature-field">
+            <label>Date:</label>
+            <div class="signature-line"></div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</body>
+
+<script>
+  window.triggerPrint = async function (type) {
+    try {
+      // Check if we're running locally (file:// protocol)
+      if (window.location.protocol === 'file:') {
+        window.print();
+        return;
+      }
+
+      const res = await fetch(`/api/print?type=${type}`);
+      const json = await res.json();
+      if (!json.ok) throw new Error(json.error || 'Print failed');
+      alert('Sent to printer');
+    } catch (e) {
+      alert('Print error: ' + e.message);
+    }
+  }
+</script>
+
+</html>
