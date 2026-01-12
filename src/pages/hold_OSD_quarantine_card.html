@@ -19,25 +19,25 @@
   <button class="print-button" onclick="window.triggerPrint('label')">🖨 Print</button>
   <!-- SINGLE PAGE STICKER -->
   <div class="container">
-    <!-- RED ALERT BANNER -->
-    <div class="alert-banner">
-      <span class="emoji">🛑</span> STOP - DO NOT MOVE <span class="emoji">🛑</span><br>
-      <span class="alert-subtitle">MASTER HOLD / OSD / QUARANTINE TAG</span>
-    </div>
-
-    <!-- TAG CONTROL -->
-    <div class="tag-control">
-      <div class="field">
-        <span>TAG#:</span>
-        <input type="text" placeholder="RN/DN-XXXX or TASK-XXXX or ADJUST-XXXX">
-      </div>
-      <div class="field">
-        <span>DATE:</span>
-        <input type="text" placeholder="MM/DD/YYYY HH:MM AM/PM">
-      </div>
-    </div>
-
     <div class="page">
+      <!-- RED ALERT BANNER -->
+      <div class="alert-banner">
+        <span class="emoji">🛑</span> STOP - DO NOT MOVE <span class="emoji">🛑</span><br>
+        <span class="alert-subtitle">MASTER HOLD / OSD / QUARANTINE TAG</span>
+      </div>
+
+      <!-- TAG CONTROL -->
+      <div class="tag-control">
+        <div class="field">
+          <span>TAG#:</span>
+          <input type="text" placeholder="RN/DN-XXXX or TASK-XXXX or ADJUST-XXXX">
+        </div>
+        <div class="field">
+          <span>DATE:</span>
+          <input type="text" placeholder="MM/DD/YYYY HH:MM AM/PM">
+        </div>
+      </div>
+
       <!-- SECTION 1: IDENTIFICATION -->
       <div class="section-header">IDENTIFICATION</div>
       <div class="form-grid two-col">
@@ -145,7 +145,7 @@
         <div class="checkbox-group three-col">
           <div class="checkbox-item">
             <input type="checkbox" id="bill-admin">
-            <div class="checkbox-label"><strong>System Manual Change</strong></div>
+            <div class="checkbox-label"><strong>Manual Change</strong></div>
           </div>
           <div class="checkbox-item">
             <input type="checkbox" id="bill-inspection">
@@ -165,13 +165,13 @@
           </div>
           <div class="form-field spaced-top">
             <label>QTY/HRS:</label>
-            <input type="text" placeholder="Enter quantity or hours">
+            <input type="text" style="height: 40px; width: 60px; font-size: 1.3rem; padding: 0px 2px;">
           </div>
         </div>
       </div>
 
       <!-- SECTION 4: DISPOSITION -->
-      <!-- <div class="section-header">DISPOSITION (Circle One)</div>
+      <div class="section-header">DISPOSITION (Circle One)</div>
       <div class="action-group">
         <div class="action-button">
           <div>✓</div>
@@ -193,22 +193,19 @@
           <div>🎁</div>
           <div>DONATE</div>
         </div>
-      </div> -->
+      </div>
 
       <!-- FINAL AUTHORIZATION -->
-      <!-- <div style="margin-top: 1px; padding: 1px; border: 1px solid var(--osd-red); border-radius: 2px; background: #fff8f8;">
-        <div style="font-weight: 700; font-size: 0.5rem; margin-bottom: 1px; text-transform: uppercase; color: var(--osd-red);">AUTH SIGNATURE & DATE</div>
-        <div class="signature-block" style="background: white;">
-          <div class="signature-field">
-            <label>Name/Signature:</label>
-            <div class="signature-line"></div>
-          </div>
-          <div class="signature-field">
-            <label>Date:</label>
-            <div class="signature-line"></div>
-          </div>
+      <div class="signature-block" style="background: white;">
+        <div class="signature-field">
+          <label>Name/Signature:</label>
+          <div class="signature-line"></div>
         </div>
-      </div> -->
+        <div class="signature-field">
+          <label>Date:</label>
+          <div class="signature-line"></div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
