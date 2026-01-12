@@ -434,7 +434,7 @@ th:has(> .manual-check) {
 @media print {
   @page {
     size: letter landscape;
-    margin: 0.1in;
+    margin: 0.2in;
   }
 
   body {
