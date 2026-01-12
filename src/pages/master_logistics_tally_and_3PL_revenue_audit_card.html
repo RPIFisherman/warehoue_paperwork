@@ -21,7 +21,11 @@
     <div class="header-container">
       <div class="header-left">
         <div class="location-badge">01.100</div>
-        <div class="print-time">Print time: 12/23/25 02:11:13 PM</div>
+        <!-- If the form is reprinted, display the REPRINT label by adding the following span inside the counttext element 
+        <br><span class="important" style="display: block; text-align: center;">REPRINT</span>-->
+        <div class="print-time">Print time: 12/23/25 02:11:13 PM 
+         <br><span class="important"
+              style="display: block; text-align: center;">REPRINT</span></div>
       </div>
 
       <h1>Master Logistics Tally & 3PL Revenue Audit Card</h1>
@@ -46,11 +50,7 @@
 
       <!-- ========== INBOUND SECTION ========== -->
       <div class="section">
-        <!-- If the form is reprinted, display the REPRINT label by adding the following span inside the counttext element 
-         <br><span class="important" style="display: block; text-align: center;">REPRINT</span>
-         -->
-        <h2>Part 1: INBOUND <counttext>Total Inbound:<br><span class="important"
-              style="display: block; text-align: center;">REPRINT</span></counttext>
+        <h2>Part 1: INBOUND <counttext>Total Inbound:</counttext>
           <count> 2 </count>
         </h2>
 
@@ -193,7 +193,7 @@
           <tr>
             <td>DN No.</td>
             <td><span class="important">DN-10021</span></td>
-            <td>Expected Qty</td>
+            <td>Picked Qty</td>
             <td><span class="important">720</span></td>
           </tr>
           <tr>
