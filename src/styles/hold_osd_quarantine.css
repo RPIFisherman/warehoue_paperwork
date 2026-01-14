@@ -186,6 +186,16 @@ body {
 }
 
 /* Checkbox Groups */
+.checkbox {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--checkbox-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  position: relative;
+}
+
 .checkbox-group {
   display: grid;
   gap: 4px;

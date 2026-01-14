@@ -364,17 +364,45 @@ td:empty {
   color: var(--checkbox-text);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
+  position: relative;
+}
+
+/* Draw custom checkbox box instead of using ☐ */
+.checkbox::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--checkbox-text);
+  border-radius: 2px;
+  background: transparent;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
 
 .manual-check {
   display: inline-flex;
-  align-items: stretch;
-  justify-content: space-evenly;
-  gap: 1px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
   background: transparent;
   padding: 0;
   border: none;
   border-radius: 0;
+}
+
+/* Draw custom checkbox for manual-check items */
+.manual-check .checkbox::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--checkbox-text);
+  border-radius: 2px;
+  background: transparent;
+  vertical-align: middle;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .checkdesc {
