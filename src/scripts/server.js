@@ -25,6 +25,11 @@ const pageConfigs = {
     file: path.join(ROOT, 'src', 'pages', 'master_logistics_tally_and_3PL_revenue_audit_card.html'),
     viewport: { width: 1024, height: 1400 },
   },
+  transaction_log: {
+    name: 'Transaction Log',
+    file: path.join(ROOT, 'src', 'pages', 'transaction_log.html'),
+    viewport: { width: 1400, height: 1024 },
+  },
 };
 
 function contentType(filePath) {
@@ -78,6 +83,7 @@ function serveIndex(res) {
     { id: 'label', title: 'Hold OSD 4x6', url: '/src/pages/hold_OSD_quarantine_card.html' },
     { id: 'location_label', title: 'Location 4x3', url: '/src/pages/location_label.html' },
     { id: 'audit', title: 'Audit Card', url: '/src/pages/master_logistics_tally_and_3PL_revenue_audit_card.html' },
+    { id: 'transaction_log', title: 'Transaction Log', url: '/src/pages/transaction_log.html' },
   ];
 
   const html = `<!DOCTYPE html>
@@ -152,7 +158,7 @@ async function handlePrint(req, res) {
   
   try {
     // Audit card uses regular printer (browser print), not ZPL
-    if (typeKey === 'audit') {
+    if (typeKey === 'audit' || typeKey === 'transaction_log') {
       send(res, 200, JSON.stringify({ 
         ok: true, 
         message: 'Use browser print dialog',
