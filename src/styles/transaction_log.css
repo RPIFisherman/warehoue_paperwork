@@ -25,6 +25,14 @@
   border: 3px solid black;
 }
 
+.section h2 {
+  margin: 2px
+}
+
+.section h2::before {
+  all: unset;
+}
+
 .status-section {
   display: flex;
   align-items: center;

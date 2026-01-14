@@ -33,7 +33,7 @@
 
       <div class="header-images">
         <div>
-          <count class="counttext"><span class="important">Form 3 of 3 </span></count>
+          <count class="counttext"><span class="important">Form No. 3</span></count>
           <br>
           <div class="location-status">
             <div class="status-section good">G</div>
@@ -67,7 +67,7 @@
           <tr>
             <td>Stack High:</td>
             <td><span class="important">2 High</span></td>
-            <td>Expy Date:</td>
+            <td>Expiration Date:</td>
             <td><span class="important">No Exp</span></td>
           </tr>
           <tr>
@@ -861,14 +861,8 @@
               <div class="cell-number"></div>
             </div>
           </td>
-          <td style="background: var(--highlight);">
-            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
-              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
-              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
-              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
-              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
-            </div>
+          <td>
+            Final Balance
           </td>
           <td style="padding: 0; background: var(--highlight);">
             <div class="qty-balance-grid">
@@ -878,20 +872,10 @@
               <div class="grid-cell-number"></div>
             </div>
           </td>
-          <td>
-            <div class="cell-letter"></div>
+          <td colspan="3">
+            Sign and Upload: _____________________________
           </td>
-          <td style="padding: 0; background: var(--highlight);">
-            <div class="qty-balance-grid">
-              <div class="grid-cell-number"></div>
-              <div class="grid-cell-number"></div>
-              <div class="grid-cell-number"></div>
-              <div class="grid-cell-number"></div>
-            </div>
-          </td>
-          <td>
-            <div class="cell-letter"></div>
-          </td>
+            
         </tr>
       </table>
     </div>
@@ -912,11 +896,10 @@
                 <li>When transaction Type = CC, QTY = BALANCE; Otherwise, need calculate. QTY +/- old Balance = new
                   Balance</li>
                 <li>When a form extends to the following year, fill in the year on a separate line.</li>
-                <li>Rcv Date: Oldest received date; if there have multi date, print oldest date.</li>
-                <li>Expy Date: Oldest expiry date; if there have multi date, print oldest date.</li>
-                <li>Left QR, Location, Reprint, scan QR, print a new form, include initial Balance. Qty +1; when
-                  Location is empty, reset Qty to 1;</li>
-                <li>Right QR: Loc+date+unique No+seq: Scan this QR code, can take a photo and upload;</li>
+                <li>Received Date: Oldest received date; if there have multi date, print oldest date.</li>
+                <li>Expiration Date: Oldest expiration date; if there have multi date, print oldest date.</li>
+                <li>Scan QR, one can find history, reprint any of the page, take a photo and upload.</li>
+                <li>Form Number indecate how many sheets are there, if print a new page +1, if location is emptied, reset to 0</li>
                 <li>After the form is filled full out or location is empty, it is signed by the supervisor, collected,
                   and saved, and a new form is printed if needed;</li>
               </ol>
