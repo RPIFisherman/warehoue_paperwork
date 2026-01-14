@@ -6,6 +6,229 @@
   --print-important-bg: #f6f7fb;
 }
 
+.container {
+  max-width: 1000px;
+  margin: 32px auto 48px;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Location status indicator */
+.location-status {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-rows: 1fr;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  gap: 0;
+  border: 3px solid black;
+}
+
+.status-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 3.5rem;
+  border-right: 3px solid black;
+  box-sizing: border-box;
+}
+
+.status-section:last-child {
+  border-right: none;
+}
+
+.status-section.good {
+  background-color: #90ee90;
+  color: #000;
+}
+
+.status-section.damage {
+  background-color: #ffb6c6;
+  color: #000;
+}
+
+.status-section.return {
+  background-color: #ffe4b5;
+  color: #000;
+}
+
+.section {
+  border: 2px solid var(--border);
+}
+
+/* Item specs container - keeps image and table on same row */
+.item-specs-container {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.item-specs-image {
+  flex-shrink: 0;
+  width: 160px;
+  height: 100%;
+  object-fit: contain;
+  margin: 1px;
+}
+
+.item-specs-container table {
+  flex: 1;
+  border: 2px solid var(--border);
+}
+
+.item-specs-table {
+  font-size: 1rem;
+}
+
+.item-specs-table td {
+  font-size: inherit;
+}
+
+table {
+  border: 2px solid var(--border);
+}
+
+th,
+td {
+  padding: 1px 1.2px;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-right: 1px solid var(--table-border-secondary);
+}
+
+th {
+  /* center */
+  text-align: center;
+  background: var(--table-header-bg);
+}
+
+td {
+  height: 24px;
+}
+
+.footnotes-ol {
+  margin-top: 1px;
+  padding-left: 20px;
+  font-size: 0.5rem;
+  color: var(--text-secondary);
+  margin: 2px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+count {
+  background: var(--transparent);
+  color: var(--text-on-primary);
+}
+
+/* Writing style font for data entry */
+.qty-balance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  height: 100%;
+  gap: 0;
+}
+
+.date-grid {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.date-grid .grid-cell-number {
+  border-right: 1px solid var(--border);
+}
+
+.date-grid .grid-cell-number:last-child {
+  border-right: none;
+}
+
+.date-slash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.checkbox::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--checkbox-text);
+  border-radius: 2px;
+  background: transparent;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+/* Change the box background and border when checked */
+.checkbox:has(input:checked)::before {
+  background-color: var(--transparent);
+  border-color: var(--checkbox-text);
+}
+
+/* Add a checkmark using a pseudo-element or clip-path */
+.checkbox:has(input:checked)::after {
+  content: "x";
+  position: absolute;
+  left: 2px; /* Adjust based on your centering */
+  top: 45%;
+  transform: translateY(-50%);
+  color: white; /* Color of the checkmark */
+  font-size: 1.5rem;
+  color: var(--text-on-primary);
+  font-weight: bold;
+}
+
+.checkdesc {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-left: 4px;
+  color: var(--checkdesc);
+}
+
+.cell-number,
+.cell-letter,
+.grid-cell-number {
+  font-family: "Brush Script MT", "Brush Script Std", cursive;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 2px;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cell-letter {
+  font-family: "Papyrus", "Courier New", "Lucida Typewriter", monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.grid-cell-number {
+  border-right: 1px solid var(--border);
+}
+
+.qty-balance-grid .grid-cell-number:last-child {
+  border-right: none;
+}
 
 /* ==========================================
    Print Styles - Portrait
@@ -61,6 +284,14 @@
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
     background: var(--transparent) !important;
+    color: var(--text) !important;
+  }
+
+  foot-notes,
+  .footnote-table,
+  .footnotes-ol {
+    page-break-inside: avoid;
+    background-color: var(--transparent) !important;
     color: var(--text) !important;
   }
 }

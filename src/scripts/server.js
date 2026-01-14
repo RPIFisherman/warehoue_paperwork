@@ -28,7 +28,7 @@ const pageConfigs = {
   transaction_log: {
     name: 'Transaction Log',
     file: path.join(ROOT, 'src', 'pages', 'transaction_log.html'),
-    viewport: { width: 1400, height: 1024 },
+    viewport: { width: 1024, height: 1400 },
   },
 };
 
