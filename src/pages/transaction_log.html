@@ -1,0 +1,304 @@
+<!-- Transaction Log HTML Template -->
+<!-- Modified by: Yuyang Gong -->
+<!-- Edited on: 01/13/2026 -->
+<!-- Jira: -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Transaction Tally</title>
+  <link rel="stylesheet" href="../styles/print_form.css">
+  <link rel="stylesheet" href="../styles/transaction_log.css">
+</head>
+
+<body>
+  <button class="print-button" onclick="window.triggerPrint('audit')">🖨 Print</button>
+  <div class="container">
+
+    <!-- ========== HEADER SECTION ========== -->
+    <div class="header-container">
+      <div class="header-left">
+        <div class="location-badge">01.100</div>
+        <!-- If the form is reprinted, display the REPRINT label by adding the following span inside the counttext element 
+        <br><span class="important" style="display: block; text-align: center;">REPRINT</span>-->
+        <div class="print-time">Print time: 12/23/25 02:11:13 PM 
+         <br><span class="important"
+              style="display: block; text-align: center;">REPRINT</span></div>
+      </div>
+
+      <h1>Manual Transaction Tally & 3PL Revenue Audit</h1>
+
+      <div class="header-images">
+        <div class="header-thumb">
+          <img src="../../assets/images/43Q31K.webp" alt="Item Diagram">
+        </div>
+        <a href="http://localhost:3000" aria-label="Open label server" style="margin-left: auto;">
+          <img src="../../assets/images/qr.png" alt="QR Code">
+        </a>
+      </div>
+    </div>
+
+    <!-- ========== ITEM SPECS SECTION ========== -->
+    <div class="section">
+      <h2>Item Specifications</h2>
+      <table>
+        <tr>
+          <td style="width: 20%;">ITEM:</td>
+          <td style="width: 30%;"><span class="important">43Q31K</span></td>
+          <td style="width: 20%;">Cust:</td>
+          <td style="width: 30%;"><span class="important">TCL North America</span></td>
+        </tr>
+        <tr>
+          <td>BaseUOM:</td>
+          <td><span class="important">EA</span></td>
+          <td>Rcv Date:</td>
+          <td><span class="important">12/23/25 01:26:24 PM</span></td>
+        </tr>
+        <tr>
+          <td>Stack High:</td>
+          <td><span class="manual-check"></span></td>
+          <td>Expy Date:</td>
+          <td><span class="important">No Exp</span></td>
+        </tr>
+        <tr>
+          <td>Hazardous:</td>
+          <td colspan="3">
+            <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Yes</span></span>
+            <span class="manual-check"><span class="checkbox checked"></span><span class="checkdesc">No</span></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ========== TRANSACTION LOG SECTION ========== -->
+    <div class="section">
+      <h2>Transaction Log</h2>
+      <table>
+        <tr>
+          <th style="width: 10%;">DATE</th>
+          <th style="width: 30%;">Transaction Type</th>
+          <th style="width: 10%;">QTY</th>
+          <th style="width: 20%;">RN/DN/Task #</th>
+          <th style="width: 10%;">BALANCE</th>
+          <th style="width: 10%;">Initial Signature</th>
+        </tr>
+        <tr>
+          <td><span class="manual-check"></span></td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">CC</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad+</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad-</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PT</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PI</span></span>
+            </div>
+          </td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+        </tr>
+        <tr>
+          <td><span class="manual-check"></span></td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">CC</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad+</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad-</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PT</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PI</span></span>
+            </div>
+          </td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+        </tr>
+        <tr>
+          <td><span class="manual-check"></span></td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">CC</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad+</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad-</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PT</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PI</span></span>
+            </div>
+          </td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+        </tr>
+        <tr>
+          <td><span class="manual-check"></span></td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">CC</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad+</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad-</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PT</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PI</span></span>
+            </div>
+          </td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+        </tr>
+        <tr>
+          <td><span class="manual-check"></span></td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">CC</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad+</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad-</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PT</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PI</span></span>
+            </div>
+          </td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+        </tr>
+        <tr>
+          <td><span class="manual-check"></span></td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">CC</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad+</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad-</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PT</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PI</span></span>
+            </div>
+          </td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+        </tr>
+        <tr>
+          <td><span class="manual-check"></span></td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">CC</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad+</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad-</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PT</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PI</span></span>
+            </div>
+          </td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+        </tr>
+        <tr>
+          <td><span class="manual-check"></span></td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">CC</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad+</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad-</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PT</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PI</span></span>
+            </div>
+          </td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+        </tr>
+        <tr>
+          <td><span class="manual-check"></span></td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">CC</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad+</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad-</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PT</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PI</span></span>
+            </div>
+          </td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+        </tr>
+        <tr>
+          <td><span class="manual-check"></span></td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">CC</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad+</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ad-</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PT</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">PI</span></span>
+            </div>
+          </td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+          <td><span class="manual-check"></span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Legend/Notes and SOP (compact side-by-side) -->
+    <div class="section">
+
+      <div class="footer-notes">
+        <table class="footnote-table sop-table">
+          <tr>
+            <td style="width: 50px;">
+              <span class="manual-check"><span class="checkdesc">Manual</span></span>
+            </td>
+            <td>
+              Cells highlighted indicate <br> items that require manual record. <br> Sign off after completion.
+            </td>
+            <td>
+              • The Number at the upper right corner indicates the total number of printing. Reprint will be labeled
+              <br>
+              under the same print time with a mark of reprint. Print this form every time have a Inbound/Outbound<br>
+              • Verify all information and check all boxes before signing off and take photo and upload to WISE.
+            </td>
+          </tr>
+        </table>
+        <div style="border-color: transparent">Signature/Date:</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+<script>
+  window.triggerPrint = async function (type) {
+    try {
+      // Check if we're running locally (file:// protocol)
+      if (window.location.protocol === 'file:') {
+        window.print();
+        return;
+      }
+
+      const res = await fetch(`/api/print?type=${type}`);
+      const json = await res.json();
+      if (!json.ok) throw new Error(json.error || 'Print failed');
+
+      // If server says to use window.print (for letter-size docs), do that
+      if (json.useWindowPrint) {
+        window.print();
+        return;
+      }
+
+      alert('Sent to printer');
+    } catch (e) {
+      alert('Print error: ' + e.message);
+    }
+  }
+</script>
+
+</html>
