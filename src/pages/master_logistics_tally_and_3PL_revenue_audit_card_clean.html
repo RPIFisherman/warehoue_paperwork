@@ -1,0 +1,619 @@
+<!-- Master Logistics Tally & 3PL Revenue Audit Card -->
+<!-- Modified by: Yuyang Gong -->
+<!-- Edited on: 01/08.2026 -->
+<!-- Jira: WISE2018-33155 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Logistics Tally & 3PL Revenue Audit Card</title>
+  <link rel="stylesheet" href="../styles/print_form.css">
+  <style>
+    /* tr,td,th {
+      border: 1px solid black;
+    } */
+    /* Provide ample writing space in LP tables for handwritten entries */
+    .lp-grid .footnote-table tr,
+    .lp-grid .footnote-table td {
+      list-style-type: none;
+      height: 18px; /* approx 0.47 in */
+    }
+    .lp-grid .footnote-table td {
+      padding: 6px 8px; /* add a bit of breathing room */
+    }
+  </style>
+</head>
+
+<body>
+  <button class="print-button" onclick="window.triggerPrint('audit')">🖨 Print</button>
+  <div class="container">
+
+    <!-- ========== HEADER SECTION ========== -->
+    <div class="header-container">
+      <div class="header-left">
+        <div class="location-badge" style="min-width: 150px;min-height: 60px;"></div>
+        <!-- If the form is reprinted, display the REPRINT label by adding the following span inside the counttext element 
+        <br><span class="important" style="display: block; text-align: center;">REPRINT</span>-->
+        <div class="print-time">Print time: 
+        </div>
+      </div>
+
+      <h1>Master Logistics Tally & 3PL Revenue Audit Card</h1>
+
+      <div class="header-images">
+        <div class="header-thumb">
+          <div class="item-specs-image" style="width: 100px; min-height: 100px; height: 100px; border: 1px solid black; display: flex; justify-content: center; align-items: center; text-align: center;">
+            Pallet Diagram
+          </div>
+          <div class="header-caption">____X____</div>
+        </div>
+        <div class="header-thumb">
+          <div class="item-specs-image" style="width: 100px; min-height: 100px; height: 100px; border: 1px solid black; display: flex; justify-content: center; align-items: center; text-align: center;">
+            Location Diagram
+          </div>
+          <div class="header-caption">____Height</div>
+        </div>
+          <div class="item-specs-image" style="margin: 3px; width: 120px; min-height: 100px; height: 120px; border: 1px solid black; display: flex; justify-content: center; align-items: center;">QR Code</div>
+      </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT GRID ========== -->
+    <div class="grid-two">
+
+      <!-- ========== INBOUND SECTION ========== -->
+      <div class="section">
+        <h2>Part 1: INBOUND <counttext>Total Inbound:</counttext>
+          <count></count>
+        </h2>
+
+        <!-- A. Shipment Data -->
+        <h3>A. Shipment Data</h3>
+        <table>
+          <tr>
+            <td>Customer</td>
+            <td style="min-width: 60px;"><span class="important"></span></td>
+            <td>Carrier</td>
+            <td style="min-width: 60px;"><span class="important"></span></td>
+          </tr>
+          <tr>
+            <td>RN No.</td>
+            <td><span class="important"></span></td>
+            <td>PO Number</td>
+            <td><span class="important"></span></td>
+          </tr>
+          <tr>
+            <td>Supplier/Vendor</td>
+            <td></td>
+            <td>Arrival Time</td>
+            <td><span class="important"></span></td>
+          </tr>
+        </table>
+
+        <!-- B. Freight Profile -->
+        <h3>B. Freight Profile</h3>
+        <table>
+          <tr>
+            <th style="min-width: 20px;">SKU</th>
+            <th style="min-width: 60px">Description</th>
+            <th style="min-width: 10px">Qty</th>
+            <th style="min-width: 60px;">UOM</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td><span class="important"></span></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td>Weight (lbs)</td>
+            <td style="min-width: 80px;"></td>
+            <td>EA Dimension (L×W×H)</td>
+            <td style="min-width: 80px;"></style></td>
+          </tr>
+          <tr>
+            <td>Pallet Weight (lbs)</td>
+            <td></td>
+            <td>Pallet Dimension (L×W×H)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>TiHi</td>
+            <td></td>
+            <td>Pallet Count</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Hazmat Status</td>
+            <td></td>
+            <td>Freight Class</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Shipping Rule</td>
+            <td><span class="important"></span>
+            </td>
+            <td>Stack Height</td>
+            <!-- If stack height == 1 print DO NOT STACK -->
+            <td><span class="important"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"></span>Temp.</td>
+            <td colspan="3" style="background: var(--highlight);">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ambient</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Chill</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Frozen</span></span>
+            </td>
+          </tr>
+        </table>
+
+        <!-- C. Inbound Accessorials -->
+        <h3>C. Inbound Accessorials</h3>
+        <table>
+          <tr>
+            <th style="text-align: center;">Type</th>
+            <th style="text-align: center; width: 75px;">Qty/Hrs</th>
+            <th style="text-align: center;">Notes</th>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Offload</span></span>
+            </td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Labor</span></span>
+            </td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span class="checkdesc">General</span></span>
+            </td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span
+                  class="checkdesc">Materials</span></span></td>
+            <td colspan="2">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Pallet
+                  _________________</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Stretch
+                  Wrap</span></span> 
+                  <br>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Label
+                  _________________</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Corner
+                  Board</span></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ========== OUTBOUND SECTION ========== -->
+      <div class="section">
+        <h2>Part 2: OUTBOUND <counttext>Total Outbound:</counttext>
+          <count></count>
+        </h2>
+
+        <!-- A. Order Data -->
+        <h3>A. Order Data</h3>
+        <table>
+          <tr>
+            <td>DN No.</td>
+            <td style="min-width: 80px;"><span class="important"></span></td>
+            <td>Picked Qty</td>
+            <td style="min-width: 80px;"><span class="important"></span></td>
+          </tr>
+          <tr>
+            <td>Order Type</td>
+            <td></td>
+            <td>PO No.</td>
+            <td><span class="important"></span></td>
+          </tr>
+          <tr>
+            <td>Ref. No</td>
+            <td><span class="important"></span></td>
+            <td>Cust. SO No.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Trailer/Seal</td>
+            <td></td>
+            <td>Ship Method</td>
+            <td><span class="important"></span></td>
+          </tr>
+          <tr>
+            <td>Retailer</td>
+            <td><span class="important"></span></td>
+            <td>Carrier(SCAC)</td>
+            <td><span class="important"></span></td>
+          </tr>
+          <tr>
+            <td>Shipped Time</td>
+            <td><span class="important"></span></td>
+            <td>BOL No.</td>
+            <td><span class="important"></span></td>
+          </tr>
+        </table>
+
+        <!-- B. Outbound Compliance -->
+        <h3>B. Outbound Compliance</h3>
+        <table>
+          <tr>
+            <td class="checkbox"><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span>UCC Label Check</td>
+            <td class="checkbox"><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span>Packaging Standards Met</td>
+          </tr>
+          <tr>
+            <td class="checkbox"><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span>Documentation Complete(BOL,Packing List, etc.)</td>
+            <td class="checkbox"><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span>Retailer Compliance Met</td>
+          </tr>
+          <tr>
+            <td class="checkbox"><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span>Quantity Match</td>
+            <td class="checkbox"><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span>Pallet No. Match</td>
+          </tr>
+          <tr>
+            <td class="checkbox"><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span>Not Expired</td>
+            <td class="checkbox"><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span>No Damage</td>
+          </tr>
+          <tr>
+            <td class="checkbox"><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span>Driver Check(Shipping Order #, Pro #)</td>
+            <td class="checkbox"><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span>Ship On Time</td>
+          </tr>
+        </table>
+
+        <!-- C. Outbound Accessorials -->
+        <h3>C. Outbound Accessorials</h3>
+        <table>
+          <tr>
+            <th style="text-align: center;">Type</th>
+            <th style="text-align: center; width: 75px;">Qty/Hrs</th>
+            <th style="text-align: center;">Notes</th>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Load</span></span>
+            </td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Labor</span></span>
+            </td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span class="checkdesc">General</span></span>
+            </td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span
+                  class="checkdesc">Materials</span></span></td>
+            <td colspan="2">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Pallet
+                  __________________</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Stretch
+                  Wrap</span></span> 
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Air Bag ______</span></span> 
+                  <br>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">UCC Label
+                  _____________</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Corner
+                  Board</span></span>
+            </td>
+          </tr>
+        </table>
+
+
+      </div>
+    </div>
+
+    <!-- ========== LP GRID SECTION ========== -->
+    <div class="section">
+      <div class="lp-grid">
+        <!-- Column 1 (8 rows) -->
+        <table class="footnote-table">
+          <tr>
+            <th>ILP</th>
+            <th>Qty</th>
+            <th>Lot No.</th>
+            <th>Exp</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <!-- Column 2 (8 rows) -->
+        <table class="footnote-table">
+          <tr>
+            <th style="min-width: 10px; min-height: 10px;">ILP</th>
+            <th style="min-width: 10px; min-height: 10px;">Qty</th>
+            <th style="min-width: 10px; min-height: 10px;">Lot No.</th>
+            <th style="min-width: 10px; min-height: 10px;">Exp</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <!-- Column 3 (8 rows) -->
+        <table class="footnote-table">
+          <tr>
+            <th>ILP</th>
+            <th>Qty</th>
+            <th>Lot No.</th>
+            <th>Exp</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <!-- Column 4 (8 rows) -->
+        <table class="footnote-table">
+          <tr>
+            <th>ILP</th>
+            <th>Qty</th>
+            <th>Lot No.</th>
+            <th>Exp</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Legend/Notes and SOP (compact side-by-side) -->
+    <div class="section">
+
+      <div class="footer-notes">
+        <table class="footnote-table sop-table">
+          <tr>
+            <td style="width: 50px;">
+              <span class="manual-check"><span class="checkdesc">Manual</span></span>
+            </td>
+            <td>
+              Cells highlighted indicate <br> items that require manual record. <br> Sign off after completion.
+            </td>
+            <td>
+              • The Number at the upper right corner indicates the total number of printing. Reprint will be labeled
+              <br>
+              under the same print time with a mark of reprint. Print this form every time have a Inbound/Outbound<br>
+              • Verify all information and check all boxes before signing off and take photo and upload to WISE.
+            </td>
+          </tr>
+        </table>
+        <div style="border-color: transparent">Signature/Date:</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+<script>
+  window.triggerPrint = async function (type) {
+    try {
+      // Check if we're running locally (file:// protocol)
+      if (window.location.protocol === 'file:') {
+        window.print();
+        return;
+      }
+
+      const res = await fetch(`/api/print?type=${type}`);
+      const json = await res.json();
+      if (!json.ok) throw new Error(json.error || 'Print failed');
+
+      // If server says to use window.print (for letter-size docs), do that
+      if (json.useWindowPrint) {
+        window.print();
+        return;
+      }
+
+      alert('Sent to printer');
+    } catch (e) {
+      alert('Print error: ' + e.message);
+    }
+  }
+</script>
+
+</html>

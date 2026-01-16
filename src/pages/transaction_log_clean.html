@@ -1,0 +1,954 @@
+<!-- Transaction Log HTML Template -->
+<!-- Modified by: Yuyang Gong -->
+<!-- Edited on: 01/13/2026 -->
+<!-- Jira: -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Transaction Tally</title>
+  <link rel="stylesheet" href="../styles/print_form.css">
+  <link rel="stylesheet" href="../styles/transaction_log.css">
+</head>
+
+<body>
+  <button class="print-button" onclick="window.triggerPrint('audit')">🖨 Print</button>
+  <div class="container">
+
+    <!-- ========== HEADER SECTION ========== -->
+    <div class="header-container">
+      <div class="header-left">
+        <div class="location-badge" style="min-width: 150px;min-height: 60px;"></div>
+        <!-- If the form is reprinted, display the REPRINT label by adding the following span inside the counttext element 
+        <br><span class="important" style="display: block; text-align: center;">REPRINT</span>-->
+        <div class="print-time">Print time: 
+        </div>
+      </div>
+
+      <h1>Manual Transaction Tally & 3PL Revenue Audit</h1>
+
+      <div class="header-images" style="height: 130px;">
+        <div>
+          <count class="counttext" style="min-width: 100px;"><span class="important">Form No. ___</span></count>
+          <br>
+          <div class="location-status">
+            <div style="font-size: 12px; display: flex; justify-content: center; text-align: center;">Location Status</div>
+            <!-- <div class="status-section good">G</div> -->
+            <!-- <div class="status-section damage">D</div> -->
+            <!-- <div class="status-section return">R</div> -->
+          </div>
+        </div>
+        <!-- <a href="http://example.com" aria-label="Open label server" style="margin-left: auto;">
+          <img src="../../assets/images/qr.png" alt="QR Code">
+        </a> -->
+        <div class="item-specs-image" style="margin: 3px; width: 120px; min-height: 100px; height: 120px; border: 3px solid black; display: flex; justify-content: center; align-items: center;">QR Code</div>
+      </div>
+    </div>
+
+    <!-- ========== ITEM SPECS SECTION ========== -->
+    <div class="section">
+      <h2>Item Specifications</h2>
+      <div class="item-specs-container">
+        <table class="item-specs-table">
+          <tr>
+            <td style="width: 20%;">ITEM:</td>
+            <td style="width: 30%;"><span class="important"></span></td>
+            <td style="width: 20%;">Customer:</td>
+            <td style="width: 30%;"><span class="important"></span></td>
+          </tr>
+          <tr>
+            <td>BaseUOM:</td>
+            <td><span class="important"></span></td>
+            <td>Received Date:</td>
+            <td><span class="important"></span></td>
+          </tr>
+          <tr>
+            <td>Stack High:</td>
+            <td><span class="important"></span></td>
+            <td>Expiration Date:</td>
+            <td><span class="important"></span></td>
+          </tr>
+          <tr>
+            <td>Hazardous:</td>
+            <td>
+              
+                <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc"><span class="important">Yes</span></span></label>
+                <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc"><span class="important">No</span></span></label>
+            </td>
+            <td>Pick Type</td>
+            <td><span class="important"></span></td>
+          </tr>
+        </table>
+        <!-- <img src="../../assets/images/43Q31K.webp" alt="Item Diagram" class="item-specs-image"> -->
+        <div class="item-specs-image" style="border: 3px solid black; display: flex; justify-content: center; align-items: center;">Item Picture</div>
+      </div>
+    </div>
+
+    <!-- ========== TRANSACTION LOG SECTION ========== -->
+    <div class="section">
+      <h2>Transaction Log</h2>
+      <table>
+        <tr>
+          <th style="width: 10%;">DATE</th>
+          <th style="width: 30%;">Transaction Type</th>
+          <th style="width: 10%;">QTY <span class="important">EA</span></th>
+          <th style="width: 20%;">RN/DN/Task #</th>
+          <th style="width: 10%;">BALANCE</th>
+          <th style="width: 10%;">Initial Signature</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PT</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td>
+            Final Balance
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td colspan="3">
+            Sign and Upload: _____________________________
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ========== NOTES SECTION ========== -->
+    <div class="section">
+      <h2>Legend/Notes & SOP</h2>
+      <div class="footer-notes">
+        <table class="footnote-table" style="color: var(--transparent)">
+          <tr>
+            <td style="width: 65%; vertical-align: top;">
+              <strong>Legend/Notes:</strong>
+              <ol class="footnotes-ol">
+                <li><strong>CC:</strong> Cycle Count, <strong>AD+:</strong> Adjustment Increase, <strong>AD-:</strong>
+                  Adjustment Decrease, <strong>PT:</strong> Putaway, <strong>PI:</strong> Picking</li>
+                <li><strong>G:</strong> Good, <strong>D:</strong> Damage, <strong>R:</strong> Return</li>
+                <li>When transaction Type = CC, QTY = BALANCE; Otherwise, need calculate. QTY +/- old Balance = new
+                  Balance</li>
+                <li>When a form extends to the following year, fill in the year on a separate line.</li>
+                <li>Received Date: Oldest received date; if there have multi date, print oldest date.</li>
+                <li>Expiration Date: Oldest expiration date; if there have multi date, print oldest date.</li>
+                <li>Scan QR, one can find history, reprint any of the page, take a photo and upload.</li>
+                <li>Form Number indecate how many sheets are there, if print a new page +1, if location is emptied, reset to 0</li>
+                <li>After the form is filled full out or location is empty, it is signed by the supervisor, collected,
+                  and saved, and a new form is printed if needed;</li>
+              </ol>
+            </td>
+            <td style="width: 30%; vertical-align: top;">
+              <strong>SOP:</strong>
+              <ol class="footnotes-ol">
+                <li>Print the form before starting the audit process.</li>
+                <li>Fill in all required fields accurately.</li>
+                <li>Use the checkboxes to indicate transaction types.</li>
+                <li>Ensure initial signatures are obtained for each transaction.</li>
+                <li>Submit the completed form to the supervisor for verification.</li>
+              </ol>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+<script>
+  window.triggerPrint = async function (type) {
+    try {
+      // Check if we're running locally (file:// protocol)
+      if (window.location.protocol === 'file:') {
+        window.print();
+        return;
+      }
+
+      const res = await fetch(`/api/print?type=${type}`);
+      const json = await res.json();
+      if (!json.ok) throw new Error(json.error || 'Print failed');
+
+      // If server says to use window.print (for letter-size docs), do that
+      if (json.useWindowPrint) {
+        window.print();
+        return;
+      }
+
+      alert('Sent to printer');
+    } catch (e) {
+      alert('Print error: ' + e.message);
+    }
+  }
+</script>
+
+</html>
