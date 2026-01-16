@@ -298,14 +298,6 @@ tr:hover td {
 
 td:empty {
   min-height: 32px;
-  background-image: linear-gradient(
-    to right,
-    transparent 0,
-    transparent 8px,
-    var(--guideline) 8px,
-    var(--guideline) 9px,
-    transparent 9px
-  );
   background-size: 160px 1px;
   background-repeat: no-repeat;
   background-position: left 55%;
