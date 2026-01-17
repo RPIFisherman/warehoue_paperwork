@@ -261,7 +261,7 @@ table {
   margin: -1px 0 0px;
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 0dvb;
+  border-radius: 4px;
   overflow: hidden;
 }
 

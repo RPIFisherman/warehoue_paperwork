@@ -25,6 +25,16 @@ const pageConfigs = {
     file: path.join(ROOT, 'src', 'pages', 'master_logistics_tally_and_3PL_revenue_audit_card.html'),
     viewport: { width: 1024, height: 1400 },
   },
+  audit_pallet_location: {
+    name: 'Master Logistics Tally & 3PL Audit + Pallet Location',
+    file: path.join(ROOT, 'src', 'pages', 'master_logistics_tally_and_3PL_revenue_audit_card_pallet_location.html'),
+    viewport: { width: 1024, height: 1400 },
+  },
+  outbound_audit: {
+    name: 'Outbound OSD Audit',
+    file: path.join(ROOT, 'src', 'pages', 'outbound_OSD_audit.html'),
+    viewport: { width: 1024, height: 1400 },
+  },
   transaction_log: {
     name: 'Transaction Log',
     file: path.join(ROOT, 'src', 'pages', 'transaction_log.html'),
@@ -83,7 +93,9 @@ function serveIndex(res) {
     { id: 'label', title: 'Hold OSD 4x6', url: '/src/pages/hold_OSD_quarantine_card.html' },
     { id: 'location_label', title: 'Location 4x3', url: '/src/pages/location_label.html' },
     { id: 'audit', title: 'Audit Card', url: '/src/pages/master_logistics_tally_and_3PL_revenue_audit_card.html' },
+    { id: 'audit_pallet_location', title: 'Audit Card + Pallet Location', url: '/src/pages/master_logistics_tally_and_3PL_revenue_audit_card_pallet_location.html' },
     { id: 'transaction_log', title: 'Transaction Log', url: '/src/pages/transaction_log.html' },
+    { id: 'outbound_audit', title: 'Outbound OSD Audit', url: '/src/pages/outbound_OSD_audit.html' },
   ];
 
   const html = `<!DOCTYPE html>

@@ -1,0 +1,598 @@
+<!-- Master Logistics Tally & 3PL Revenue Audit Card -->
+<!-- Modified by: Yuyang Gong -->
+<!-- Edited on: 01/08.2026 -->
+<!-- Jira: WISE2018-33155 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Logistics Tally & 3PL Revenue Audit Card</title>
+  <link rel="stylesheet" href="../styles/transaction_log.css">
+  <link rel="stylesheet" href="../styles/print_form.css">
+  <link rel="stylesheet" href="../styles/print_form_pallet_pick.css">
+</head>
+
+<body>
+  <button class="print-button" onclick="window.triggerPrint('audit')">🖨 Print</button>
+  <div class="container">
+
+    <!-- ========== HEADER SECTION ========== -->
+    <div class="header-container">
+      <div class="header-left">
+        <div class="location-badge">01.100</div>
+        <!-- If the form is reprinted, display the REPRINT label by adding the following span inside the counttext element 
+        <br><span class="important" style="display: block; text-align: center;">REPRINT</span>-->
+        <div class="print-time">Print time: 12/23/25 02:11:13 PM
+          <br><span class="important" style="display: block; text-align: center;">REPRINT</span>
+        </div>
+      </div>
+
+      <h1>Master Logistics Tally & 3PL Revenue Audit Card</h1>
+
+      <div class="header-images">
+        <div class="header-thumb">
+          <img src="../../assets/images/pallet_diagram.png" alt="Pallet Diagram">
+          <div class="header-caption">8 × 3</div>
+        </div>
+        <div class="header-thumb">
+          <img src="../../assets/images/location_diagram.png" alt="Location Diagram">
+          <div class="header-caption">2 Height</div>
+        </div>
+        <a href="http://localhost:3000" aria-label="Open label server" style="margin-left: auto;">
+          <img src="../../assets/images/qr.png" alt="QR Code">
+        </a>
+      </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT GRID ========== -->
+    <div class="grid-two">
+
+      <!-- ========== INBOUND SECTION ========== -->
+      <div class="section">
+        <h2>INBOUND INFO</h2>
+
+        <!-- A. Shipment Data -->
+        <h3>A. Shipment Data</h3>
+        <table>
+          <tr>
+            <td>Customer</td>
+            <td><span class="important">TCL North America</span></td>
+            <td>Carrier</td>
+            <td><span class="important">Sample Carrier</span></td>
+            <!-- <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">FedEx</span></span> -->
+          </tr>
+          <tr>
+            <td>RN No.</td>
+            <td><span class="important">RN-9527</span></td>
+            <td>PO Number</td>
+            <td><span class="important">1233TREANSFER1</span></td>
+          </tr>
+          <tr>
+            <td>Supplier/Vendor</td>
+            <td>TCL North America</td>
+            <td>Arrival Time</td>
+            <td><span class="important">12/23/25 01:26:24 PM</span></td>
+          </tr>
+        </table>
+
+        <!-- B. Freight Profile -->
+        <h3>B. Freight Profile</h3>
+        <table>
+          <tr>
+            <th>SKU</th>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>UOM</th>
+          </tr>
+          <tr>
+            <td>43Q31K</td>
+            <td>43Q31K</td>
+            <td><span class="important">600</span></td>
+            <td>EA</td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td>Weight (lbs)</td>
+            <td>19.7 LB</td>
+            <td>EA Dimension (L×W×H)</td>
+            <td>42.3 × 4.8 × 25.4 in</td>
+          </tr>
+          <tr>
+            <td>Pallet Weight (lbs)</td>
+            <td>1150 lb</td>
+            <td>Pallet Dimension (L×W×H)</td>
+            <td>48 x 40 x 76.2 in</td>
+          </tr>
+          <tr>
+            <td>TiHi</td>
+            <td>8 × 3</td>
+            <td>Pallet Count</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Hazmat Status</td>
+            <td>Non-hazmat</td>
+            <td>Freight Class</td>
+            <td>Good</td>
+          </tr>
+          <tr>
+            <td>Shipping Rule</td>
+            <td><span class="important">FIFO</span></span>
+            </td>
+            <td>Stack Height</td>
+            <!-- If stack height == 1 print DO NOT STACK -->
+            <td><span class="important">2 High</span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"></span>Temp.</td>
+            <td colspan="3" style="background: var(--highlight);">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Ambient</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Chill</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Frozen</span></span>
+            </td>
+          </tr>
+        </table>
+
+        <!-- C. Inbound Accessorials -->
+        <h3>C. Inbound Accessorials</h3>
+        <table>
+          <tr>
+            <th style="text-align: center;">Type</th>
+            <th style="text-align: center; width: 75px;">Qty/Hrs</th>
+            <th style="text-align: center;">Notes</th>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Offload</span></span>
+            </td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Labor</span></span>
+            </td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></span></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span class="checkdesc">General</span></span>
+            </td>
+            <td><span class="manual-check"></span></td>
+            <td><span class="manual-check"></td>
+          </tr>
+          <tr>
+            <td><span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Materials</span></span>
+            </td>
+            <td colspan="2">
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Pallet
+                  _________________</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Stretch
+                  Wrap</span></span>
+              <br>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Label
+                  _________________</span></span>
+              <span class="manual-check"><span class="checkbox"></span><span class="checkdesc">Corner
+                  Board</span></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ========== OUTBOUND SECTION ========== -->
+      <div class="section">
+        <h2>Inventory ILP List </h2>
+
+        <!-- Column 1 (8 rows) -->
+        <table>
+          <tr>
+            <th>ILP</th>
+            <th>Qty</th>
+            <th>ILP</th>
+            <th>Qty</th>
+            <th>ILP</th>
+            <th>Qty</th>
+            <th>ILP</th>
+            <th>Qty</th>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+            <td>ILP-5912985</td>
+            <td>30</td>
+          </tr>
+        </table>
+
+      </div>
+
+
+    </div>
+          </s>
+
+    <!-- ========== LP GRID SECTION ========== -->
+    <div class="section">
+      <table>
+        <tr>
+          <th style="width: 10%; text-align: center;">DATE</th>
+          <th style="width: 20%; text-align: center;">Transaction Type</th>
+          <th style="width: 10%; text-align: center;">QTY <span class="important">EA</span></th>
+          <th style="width: 30%; text-align: center;">DN/Task #</th>
+          <th style="width: 10%; text-align: center;">BALANCE</th>
+          <th style="width: 10%; text-align: center;">Signature</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-number">12 <span class="date-slash">/</span> 23 <span class="date-slash">/</span> 25</div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" checked hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number">1</div>
+              <div class="grid-cell-number">2</div>
+              <div class="grid-cell-number">0</div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter">DN-9527</div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number">4</div>
+              <div class="grid-cell-number">8</div>
+              <div class="grid-cell-number">0</div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter">WISE</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number">12</div>
+              <span class="date-slash">/</span>
+              <div class="cell-number">24</div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" checked hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number">1</div>
+              <div class="grid-cell-number">5</div>
+              <div class="grid-cell-number">0</div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter">DN-12045123</div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number">3</div>
+              <div class="grid-cell-number">3</div>
+              <div class="grid-cell-number">0</div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter">WISE</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="date-grid">
+              <div class="cell-number"></div>
+              <span class="date-slash">/</span>
+              <div class="cell-number"></div>
+            </div>
+          </td>
+          <td style="background: var(--highlight);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">CC</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad+</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">Ad-</span></label>
+              <label class="checkbox"><input type="checkbox" hidden><span class="checkdesc">PI</span></label>
+            </div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td style="padding: 0; background: var(--highlight);">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Legend/Notes and SOP (compact side-by-side) -->
+    <div class="section">
+
+      <div class="footer-notes">
+        <table class="footnote-table sop-table">
+          <tr>
+            <td style="width: 50px;">
+              <span class="manual-check"><span class="checkdesc">Manual</span></span>
+            </td>
+            <td>
+              Cells highlighted indicate <br> items that require manual record. <br> Sign off after completion.
+            </td>
+            <td>
+              • The Number at the upper right corner indicates the total number of printing. Reprint will be labeled
+              <br>
+              under the same print time with a mark of reprint. Print this form every time have a Inbound/Outbound<br>
+              • Verify all information and check all boxes before signing off and take photo and upload to WISE.
+            </td>
+          </tr>
+        </table>
+        <div style="border-color: transparent">Signature/Date:</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+<script>
+  window.triggerPrint = async function (type) {
+    try {
+      // Check if we're running locally (file:// protocol)
+      if (window.location.protocol === 'file:') {
+        window.print();
+        return;
+      }
+
+      const res = await fetch(`/api/print?type=${type}`);
+      const json = await res.json();
+      if (!json.ok) throw new Error(json.error || 'Print failed');
+
+      // If server says to use window.print (for letter-size docs), do that
+      if (json.useWindowPrint) {
+        window.print();
+        return;
+      }
+
+      alert('Sent to printer');
+    } catch (e) {
+      alert('Print error: ' + e.message);
+    }
+  }
+</script>
+
+</html>

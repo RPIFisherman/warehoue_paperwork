@@ -1,0 +1,40 @@
+.section h2 {
+  all: unset;
+  display: block;
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: center;
+  background-color: gray;
+  color: white;
+  margin: 0;
+  margin-bottom: 1px;
+  border-radius: 4px 4px 0 0;
+}
+
+.section h2::before{
+  all: unset;
+}
+
+@media print {
+  .section h2 {
+    background-color: gray !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  td.checkbox,
+  th.checkbox,
+  td:has(> .manual-check),
+  th:has(> .manual-check) {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    background: var(--highlight) !important;
+  }
+
+  .important {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    background: var(--highlight) !important;
+    color: var(--text) !important;
+  }
+}
