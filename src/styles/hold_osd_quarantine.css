@@ -13,7 +13,7 @@
 
 html,
 body {
-  margin: 2px;
+  margin: 1px;
   padding: 0px;
   width: 100%;
   height: 100%;
@@ -38,14 +38,26 @@ body {
 .alert-banner {
   background: var(--osd-red);
   color: var(--osd-white);
-  text-align: center;
-  padding: 2px;
+  padding: 2px 6px;
   margin: 2px;
   font-size: 2rem;
   font-weight: 900;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   border-bottom: 0px solid #8b0000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.alert-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
 }
 
 .alert-banner .emoji {
@@ -55,6 +67,21 @@ body {
 
 .alert-subtitle {
   font-size: 2rem;
+}
+
+.header-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-images img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  background: var(--osd-white);
+  border-radius: 4px;
+  padding: 2px;
 }
 
 .tag-control {
@@ -188,12 +215,19 @@ body {
 /* Checkbox Groups */
 .checkbox {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--checkbox-text);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
   position: relative;
+}
+
+.checkdesc {
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin-left: 4px;
+  color: var(--checkdesc);
 }
 
 .checkbox-group {

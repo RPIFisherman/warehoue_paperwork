@@ -22,19 +22,24 @@
     <div class="page">
       <!-- RED ALERT BANNER -->
       <div class="alert-banner">
-        <span class="emoji">🛑</span> STOP - DO NOT MOVE <span class="emoji">🛑</span><br>
-        <span class="alert-subtitle">MASTER HOLD / OSD / QUARANTINE TAG</span>
+        <div class="alert-text">
+          <div><span class="emoji">🛑</span> STOP - DO NOT MOVE <span class="emoji">🛑</span></div>
+          <div class="alert-subtitle">MASTER HOLD / OSD / QUARANTINE TAG</div>
+        </div>
+        <div class="header-images">
+          <img src="../../assets/images/qr.png" alt="QR Code">
+        </div>
       </div>
 
       <!-- TAG CONTROL -->
       <div class="tag-control">
         <div class="field">
           <span>TAG#:</span>
-          <input type="text" placeholder="RN/DN-XXXX or TASK-XXXX or ADJUST-XXXX">
+          <input type="text" value="RN/DN-XXXX or TASK-XXXX or ADJUST-XXXX">
         </div>
         <div class="field">
           <span>DATE:</span>
-          <input type="text" placeholder="MM/DD/YYYY HH:MM AM/PM">
+          <input type="text" value="MM/DD/YYYY HH:MM AM/PM">
         </div>
       </div>
 
@@ -43,26 +48,39 @@
       <div class="form-grid two-col">
         <div class="form-field">
           <label>SKU:</label>
-          <input type="text" placeholder="43Q31K">
+          <input type="text" value="43Q31K">
+        </div>
+        <div class="form-field">
+          <label>Disc:</label>
+          <input type="text" value="1233TRANSFER1">
         </div>
         <div class="form-field">
           <label>QTY:</label>
           <input type="text" placeholder="100">
         </div>
         <div class="form-field">
-          <label>CUSTOMER:</label>
-          <input type="text" placeholder="TCL North America">
+          <label>CUST:</label>
+          <input type="text" value="TCL North America">
         </div>
         <div class="form-field">
-          <label>PO#:</label>
-          <input type="text" placeholder="1233TRANSFER1">
+          <label>UOM:</label>
+          <!-- <label>UOM: &#9745 Ea <span class="checkbox"></span>Cs <span class="checkbox"></span>Plt</label> -->
+          <div class="checkbox-item" style="border: 0;">
+            <input type="checkbox" id="uom-ea" checked>
+            <div class="checkbox-label"><strong>EA</strong></div>
+          </div>
+          <div class="checkbox-item" style="border: 0;">
+            <input type="checkbox" id="uom-cs">
+            <div class="checkbox-label"><strong>CS</strong></div>
+          </div>
+          <div class="checkbox-item" style="border: 0;">
+            <input type="checkbox" id="uom-pallet">
+            <div class="checkbox-label"><strong>PALLET</strong></div>
+          </div>
         </div>
         <div class="form-field">
           <label>LOC:</label>
-          <input type="text" placeholder="101.01.10.1">
-        </div>
-        <div class="form-field">
-          <label>UOM: &#9745 Ea <span class="checkbox"></span>Cs <span class="checkbox"></span>Plt</label>
+          <input type="text" value="101.01.10.1">
         </div>
       </div>
 
