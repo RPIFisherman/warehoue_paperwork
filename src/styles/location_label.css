@@ -63,7 +63,7 @@ body {
 
 .location-breakdown {
   font-size: clamp(0.8rem, 8vw, 2rem);
-  color: var(--location-dark);
+  color: var(--location-white);
   margin: 2px 0 0;
   text-transform: uppercase;
   letter-spacing: 0.01em;
@@ -173,7 +173,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  border-bottom: 1px solid var(--location-dark);
+  border-bottom: 2px solid var(--location-dark);
   padding-bottom: 2px;
 }
 
@@ -215,12 +215,12 @@ body {
 }
 
 .sku-qr img {
-  width: 100px;
+  width: 140px;
   height: auto;
   object-fit: contain;
-  border: 1px solid black;
+  border: 1px solid var(--location-white);
   border-radius: 2px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .uom-grid {
