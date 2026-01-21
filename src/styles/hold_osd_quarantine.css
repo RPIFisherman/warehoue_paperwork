@@ -212,6 +212,12 @@ body {
   grid-column: 1 / -1;
 }
 
+input[type="text"]{
+  height: 40px;
+  width: auto;
+}
+
+
 /* Checkbox Groups */
 .checkbox {
   text-align: center;
