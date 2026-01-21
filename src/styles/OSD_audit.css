@@ -1,0 +1,133 @@
+/* Location Label Specific Styles */
+:root {
+  --stop-red: #e31b23;
+}
+
+.section {
+  margin-bottom: 1px;
+  border-radius: 6px;
+}
+
+h1 {
+  margin-right: 36px;
+  font-weight: 770;
+}
+
+.section h2 {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  background-color: var(--stop-red);
+  margin: 0;
+  margin-top: 1px;
+  font-size: 1rem;
+  padding: 2px 0x;
+  border-radius: 6px 6px 0 0;
+  color: #fff;
+}
+
+section h3 {
+  margin: 0px; /* Removes default margins */
+  font-size: 1rem;
+  text-align: center; /* Centers the text horizontally */
+  background-color: gray; /* Sets the background color to gray */
+  /* align-items and align-self are not needed here */
+}
+
+td,
+th {
+  font-size: 12px;
+  height: fit-content;
+}
+
+td:has(input[type="checkbox"]) {
+  padding: 2px 6px;
+  margin: 2px;
+  vertical-align: baseline;
+  text-align: center;
+  white-space: nowrap;
+}
+
+td:has(input[type="checkbox"].left-aligned) {
+  text-align: left;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--text);
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+
+  margin: 0;
+
+  vertical-align: middle;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "X";
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* This class hides the border but keeps the "X" and clickability */
+input[type="checkbox"].is-hidden {
+  border-color: transparent;
+}
+
+/* Optional: remove background if you have one */
+input[type="checkbox"].is-hidden {
+  background-color: transparent;
+}
+
+/* Ensure the 'X' still shows when checked, even if border is hidden */
+input[type="checkbox"].is-hidden:checked::before {
+  content: "X";
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--text);
+}
+
+.location-badge {
+  font-size: 2rem;
+}
+
+.item-specs-table {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--text);
+  font-size: 12px;
+}
+
+sup {
+  font-size: 0.3rem;
+}
+
+.cell-letter {
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+@media print {
+  .section h2 {
+    background-color: var(--text) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .section h3 {
+    background-color: lightgray !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

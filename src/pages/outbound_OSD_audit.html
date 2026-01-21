@@ -1,332 +1,521 @@
-<!-- Transaction Log -->
+<!-- Transaction Log HTML Template -->
 <!-- Modified by: Yuyang Gong -->
-<!-- Edited on: 01/13.2026 -->
-<!-- Jira: WISE2018-33155 -->
+<!-- Edited on: 01/13/2026 -->
+<!-- Jira: -->
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transaction Log</title>
-    <link rel="stylesheet" href="../styles/print_form.css" />
-    <link rel="stylesheet" href="../styles/transaction_log.css" />
-  </head>
 
-  <body>
-    <button class="print-button" onclick="window.triggerPrint('transaction')">
-      🖨 Print
-    </button>
-    <div class="container">
-      <!-- ========== HEADER SECTION ========== -->
-      <div class="header-container">
-        <div class="header-left">
-          <div class="print-time">
-            Print time: <span class="important">01/13/26 02:11:13 PM</span>
-          </div>
-        </div>
-        <h1>Transaction Log</h1>
-        <div class="header-left" style="text-align: right">
-          <div class="print-time">
-            Print Qty: <span class="important">1</span>
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Transaction Tally</title>
+  <link rel="stylesheet" href="../styles/print_form.css">
+  <link rel="stylesheet" href="../styles/transaction_log.css">
+  <link rel="stylesheet" href="../styles/OSD_audit.css">
+</head>
+
+<body>
+  <button class="print-button" onclick="window.triggerPrint('audit')">🖨 Print</button>
+  <div class="container">
+
+    <!-- ========== HEADER SECTION ========== -->
+    <div class="header-container">
+      <div class="header-left">
+        <div class="location-badge">DN-11231123</div>
       </div>
+      <h1>OUTBOUND LOGISTICS CONTROL & OSD AUDIT</h1>
 
-      <!-- ========== ITEM INFORMATION SECTION ========== -->
-      <div class="section">
-        <h2>Item Information</h2>
-        <div class="info-section-with-images">
-          <div class="info-section-content">
-            <div class="info-section">
-              <div class="info-row">
-                <span class="info-label">ITEM:</span>
-                <span class="underline">32Q31K</span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">Stack Height:</span>
-                <span class="underline">2</span>
-              </div>
-            </div>
-
-            <div class="info-section">
-              <div class="info-row">
-                <span class="info-label">BaseUOM:</span>
-                <div class="checkbox-group">
-                  <div class="manual-check">
-                    <span class="checkbox"></span
-                    ><span class="checkdesc">EA</span>
-                  </div>
-                  <div class="manual-check">
-                    <span class="checkbox"></span
-                    ><span class="checkdesc">CS</span>
-                  </div>
-                  <div class="manual-check">
-                    <span class="checkbox"></span
-                    ><span class="checkdesc">PLT</span>
-                  </div>
-                </div>
-              </div>
-              <div class="info-row">
-                <span class="info-label">Customer:</span>
-                <span class="underline">TCL NORTH AMERICA</span>
-              </div>
-            </div>
-
-            <div class="info-section">
-              <div class="info-row">
-                <span class="info-label">Rcv Date:</span>
-                <span class="underline">01/07/2026</span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">Hazardous:</span>
-                <div class="checkbox-group">
-                  <div class="manual-check">
-                    <span class="checkbox"></span
-                    ><span class="checkdesc">Yes</span>
-                  </div>
-                  <div class="manual-check">
-                    <span class="checkbox"></span
-                    ><span class="checkdesc">No</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="info-section">
-              <div class="info-row">
-                <span class="info-label">Expy Date:</span>
-                <span class="underline"></span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">Location:</span>
-                <span class="underline">01.001</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-section">
-            <div class="image-container">
-              <img
-                src="../../assets/images/43Q31K.webp"
-                alt="Item Image"
-                class="item-image"
-              />
-            </div>
-          </div>
-
-          <div class="qr-code-section">
-            <a href="http://localhost:3000" aria-label="Open label server">
-              <img src="../../assets/images/qr.png" alt="QR Code" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ========== TRANSACTION TABLE SECTION ========== -->
-      <div class="section">
-        <h2>Transaction Records</h2>
-        <table>
-          <thead>
-            <tr>
-              <th style="width: 60px">DATE<br />MM/DD</th>
-              <th>Transaction TYPE</th>
-              <th style="width: 100px">RN/DN/Task #</th>
-              <th style="width: 60px">QTY</th>
-              <th style="width: 80px">BALANCE</th>
-              <th style="width: 80px">Initial Signature</th>
-              <th style="width: 60px">Sign</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="font-weight: 600">
-              <td></td>
-              <td>
-                <div class="transaction-type">
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >CC
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >Ad+
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >Ad-
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >PT
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >PI
-                  </div>
-                </div>
-              </td>
-              <td></td>
-              <td></td>
-              <td>Initial Balance</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>1/7</td>
-              <td>
-                <div class="transaction-type">
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >CC
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >Ad+
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >Ad-
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >PT
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >PI
-                  </div>
-                </div>
-              </td>
-              <td>RN-12345</td>
-              <td>1200</td>
-              <td>1200</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>1/8</td>
-              <td>
-                <div class="transaction-type">
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >CC
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >Ad+
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >Ad-
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >PT
-                  </div>
-                  <div>
-                    <span class="manual-check"
-                      ><span class="checkbox"></span></span
-                    >PI
-                  </div>
-                </div>
-              </td>
-              <td>DN-9527</td>
-              <td>40</td>
-              <td>1160</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- ========== NOTES SECTION ========== -->
-      <div class="section">
-        <h2>Transaction Type Legend & Instructions</h2>
-        <div class="notes-section">
-          <ol>
-            <li>
-              <strong>CC:</strong> Cycle Count, <strong>Ad+:</strong> Add
-              Adjustment, <strong>Ad-:</strong> Decrease Adjustment,
-              <strong>PT:</strong> Putaway, <strong>PI:</strong> Physical
-              Inventory
-            </li>
-            <li>
-              When transaction Type = CC, QTY = BALANCE; Otherwise, need
-              calculate. QTY +/- old Balance = new Balance
-            </li>
-            <li>
-              When a form extends to the following year, fill in the year on a
-              separate line.
-            </li>
-            <li>
-              Rcv Date: Oldest received date; if there are multiple dates, print
-              oldest date.
-            </li>
-            <li>
-              Expy Date: Oldest expiry date; if there are multiple dates, print
-              oldest date.
-            </li>
-            <li>
-              Left QR, Location, Reprint, scan QR, print a new form, include
-              initial Balance. Qty +1; when Location is empty, reset Qty to 1.
-            </li>
-            <li>
-              Right QR: Loc+date+unique No+seq. Scan this QR code to take a
-              photo and upload.
-            </li>
-            <li>
-              D: If this location is a damage location, print this "Sign". If
-              not, nothing prints.
-            </li>
-            <li>
-              After the form is filled out completely or location is empty, it
-              is signed by the supervisor, collected, saved, and a new form is
-              printed if needed.
-            </li>
-          </ol>
-        </div>
+      <div class="header-images">
+        <a href="http://example.com" aria-label="Open label server" style="margin-left: auto;">
+          <img src="../../assets/images/qr.png" alt="QR Code">
+        </a>
       </div>
     </div>
-  </body>
 
-  <script>
-    window.triggerPrint = async function (type) {
-      try {
-        // Check if we're running locally (file:// protocol)
-        if (window.location.protocol === "file:") {
-          window.print();
-          return;
-        }
+    <!-- ========== Order Validation ========== -->
+    <div class="section">
+      <h2>SECTION 1: ORDER VALIDATION</h2>
+      <table class="item-specs-table" style="border-radius: 4px 4px 0 0;"
+        <tr>
+          <td>Customer</td>
+          <td style="min-width: 60px;"><span class="important">TCL North America</span></td>
+          <td>PO #</td>
+          <td><span class="important">PO_Number</span></td>
+          <td>Order Type</td>
+          <td><span class="important">Dropship</span></td>
+          <td>MABD</td>
+          <td><span class="important">01/10/26</span></td>
+        </tr>
+        <tr>
+          <td>Ref. #</td>
+          <td><span class="important">refrence_Number</span></td>
+          <td>Load</td>
+          <td><span class="important">Load Number</span></td>
+          <td>Rush</td>
+          <td>
+            <input type="checkbox" id="is-rush" class="left-aligned" checked /> <label for="is-rush"><span
+                class="important">Yes</span></label>
+          </td>
+          <td>Ship Method</td>
+          <td><span class="important">LTL</span></td>
+        </tr>
+          <td>
+            Retailer
+          </td>
+          <td colspan="3">
+            WALMART, INC.(WM. DOMESTIC0BILLING)
+          </td>
+          <td>
+            Pro#
+          </td>
+          <td>
+            123455-ABCD
+          </td>
+          <td>
+            Total Pallets
+          </td>
+          <td colspan="2"style="padding: 0;">
+            <div class="qty-balance-grid">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number">7</div>
+              <div class="grid-cell-number">5</div>
+              <div class="grid-cell-number">0</div>
+            </div>
+          </td>
+        </tr>
+      </table>
 
-        const res = await fetch(`/api/print?type=${type}`);
-        const json = await res.json();
-        if (!json.ok) throw new Error(json.error || "Print failed");
+      <h3 style="background-color: lightgray; text-align: center;">PHYSICAL QC AUDIT</h3>
+      <table>
+        <tr>
+          <td style="min-width: 10%;">Project</td>
+          <td style="width: 16px">Check</td>
+          <td style="min-width: 150px;">Notes</td>
+          <td style="min-width: 10%;">Project</td>
+          <td style="width: 16px">Check</td>
+          <td style="min-width: 150px;">Notes</td>
+        </tr>
+        <tr>
+          <td>Item Quantity</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
 
-        // If server says to use window.print (for letter-size docs), do that
-        if (json.useWindowPrint) {
-          window.print();
-          return;
-        }
+          <td>Pallet Build</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Pallet/Carton UCC</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+          <td>Stretch Wrap</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Segregation</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
 
-        alert("Sent to printer");
-      } catch (e) {
-        alert("Print error: " + e.message);
+          <td>Packing List</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>No Expired</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+          <td>No Damage</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+
+        </tr>
+      </table>
+    </div>
+
+    <!-- ========== OSD EXCEPTION LOG ========== -->
+    <div class="section">
+      <h2>SECTION 2: OSD EXCEPTION LOG</h2>
+      <table>
+        <tr>
+          <td style="min-width: 10%;">SKU</td>
+          <td style="min-width: 5%;">Qty Variance</td>
+          <td style="min-width: 10%;">LOT No.</td>
+          <td style="min-width: 10%;">Type</td>
+          <td style="min-width: 10%;">Root Cause</td>
+          <td style="min-width: 10%;">Action</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-letter" style="font-size: 0.5rem; ">ITEM-ID</div>
+          </td>
+          <td>
+            <div class="cell-letter" style="font-size: 1.2rem; ">1</div>
+          </td>
+          <td>
+            <div class="cell-letter" style="font-size: 0.5rem;">SOBODETE123</div>
+          </td>
+
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OV</span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">SH</span></span>
+            <input type="checkbox" checked><span class="checkdesc"><span class="important">DMG</span></span>
+          </td>
+
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">PE<sup>[1]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">IE<sup>[2]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">VS<sup>[3]</sup></span></span> <br>
+            <input type="checkbox" checked><span class="checkdesc"><span
+                class="important">DF<sup>[4]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">DI<sup>[5]</sup></span></span>
+          </td>
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OC<sup>[6]</sup></span></span>
+            <input type="checkbox" checked><span class="checkdesc"><span
+                class="important">SS<sup>[7]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">RI<sup>[8]</sup></span></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-letter" style="font-size: 0.5rem; "></div>
+          </td>
+          <td>
+            <div class="cell-letter" style="font-size: 1.2rem; "></div>
+          </td>
+          <td>
+            <div class="cell-letter" style="font-size: 0.5rem;"></div>
+          </td>
+
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OV</span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">SH</span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">DMG</span></span>
+          </td>
+
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">PE<sup>[1]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">IE<sup>[2]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">VS<sup>[3]</sup></span></span> <br>
+            <input type="checkbox"><span class="checkdesc"><span
+                class="important">DF<sup>[4]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">DI<sup>[5]</sup></span></span>
+          </td>
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OC<sup>[6]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span
+                class="important">SS<sup>[7]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">RI<sup>[8]</sup></span></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-letter" style="font-size: 0.5rem; "></div>
+          </td>
+          <td>
+            <div class="cell-letter" style="font-size: 1.2rem; "></div>
+          </td>
+          <td>
+            <div class="cell-letter" style="font-size: 0.5rem;"></div>
+          </td>
+
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OV</span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">SH</span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">DMG</span></span>
+          </td>
+
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">PE<sup>[1]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">IE<sup>[2]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">VS<sup>[3]</sup></span></span> <br>
+            <input type="checkbox"><span class="checkdesc"><span
+                class="important">DF<sup>[4]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">DI<sup>[5]</sup></span></span>
+          </td>
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OC<sup>[6]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span
+                class="important">SS<sup>[7]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">RI<sup>[8]</sup></span></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-letter" style="font-size: 0.5rem; "></div>
+          </td>
+          <td>
+            <div class="cell-letter" style="font-size: 1.2rem; "></div>
+          </td>
+          <td>
+            <div class="cell-letter" style="font-size: 0.5rem;"></div>
+          </td>
+
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OV</span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">SH</span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">DMG</span></span>
+          </td>
+
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">PE<sup>[1]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">IE<sup>[2]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">VS<sup>[3]</sup></span></span> <br>
+            <input type="checkbox"><span class="checkdesc"><span
+                class="important">DF<sup>[4]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">DI<sup>[5]</sup></span></span>
+          </td>
+          <td>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OC<sup>[6]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span
+                class="important">SS<sup>[7]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">RI<sup>[8]</sup></span></span>
+          </td>
+        </tr>
+      </table>
+
+
+    </div>
+
+    <!-- ========== 3PL REVENUE RECOVERY ========== -->
+    <div class="section">
+      <h2>SECTION 3: 3PL REVENUE RECOVERY</h2>
+      <table>
+        <tr>
+          <td style="min-width: 10%;">BILLABLE CATEGORY</td>
+          <td style="min-width: 150px;">SERVICE DESCRIPTION</td>
+          <td style="width: 30px">QTY/UNITS</td>
+          <td style="min-width: 10%;">BILLABLE CATEGORY</td>
+          <td style="min-width: 150px;">SERVICE DESCRIPTION</td>
+          <td style="width: 30px">QTY/UNITS</td>
+        </tr>
+        <tr>
+          <td>LOADING LABOR</td>
+          <td>
+            <input type="checkbox" class="left-aligned" checked> Driver Assist/Live Load
+          </td>
+          <td style="text-align: right;">Hrs</td>
+      
+          <td>ADMIN/COMPLIANCE</td>
+          <td>
+            <input type="checkbox" class="left-aligned" checked> Rework / Relabling Project
+          </td>
+          <td style="text-align: right;">Lbls</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="checkbox" class="left-aligned" checked> Floor Loading (Hand Stack)
+          </td>
+          <td style="text-align: right;">Cs</td>
+          <td></td>
+          <td>
+            <input type="checkbox" class="left-aligned" checked> Rush / Same-Day Surcharge
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="checkbox" class="left-aligned" checked> Pallet Restack / Rebuild
+          </td>
+          <td style="text-align: right;">Plts</td>
+          <td></td>
+          <td>
+            <input type="checkbox" class="left-aligned" checked> Detention (>2 Hrs Wait)
+          </td>
+          <td style="text-align: right;">Hrs</td>
+        </tr>
+        <tr>
+          <td>MATERIALS</td>
+          <td>
+            <input type="checkbox" class="left-aligned" checked> Dunnage / Airbags Used
+          </td>
+          <td style="text-align: right;">Qty</td>
+      
+          <td></td>
+          <td>
+            <input type="checkbox" class="left-aligned" checked> Photo Evidence Fee
+          </td>
+          <td style="text-align: right;"> Qty</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="checkbox" class="left-aligned" checked> Load Straps / Load Bars
+          </td>
+          <td style="text-align: right;">Bars</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="checkbox" class="left-aligned" checked> New Pallets Supplied
+          </td>
+          <td style="text-align: right;">Plts</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ========== CHAIN OF CUSTODY ========== -->
+    <div class="section">
+      <h2>SECTION 4: CHAIN OF CUSTODY</h2>
+      <table class="item-specs-table">
+        <tr>
+          <td>Carrier</td>
+          <td style="min-width: 60px;"><span class="important">J B HUNT DEDICATED</span></td>
+          <td>TRLR/C #</td>
+          <td style="min-width: 60px;"><span class="important">Trailer/Container #</span></td>
+          <td>Appt. Time</td>
+          <td style="min-width: 60px;"><span class="important">01/06 13:00:00</span></td>
+          <td>Arrival Time</td>
+          <td><span class="important">01/06 08:38:51</span></td>
+        </tr>
+        <tr>
+          <td>Driver</td>
+          <td><span class="important">Jane Doe</span></td>
+          <td>Reschedule</td>
+          <td>
+            <input type="checkbox"><span class="checkdesc"><span class="important">Yes
+                ____</span></span>
+            <input type="checkbox" checked><span class="checkdesc"><span class="important">No</span></span>
+          </td>
+          <td>Start Load</td>
+          <td><span class="important">01/06 10:31:11</span></td>
+          <td>End Load</td>
+          <td><span class="important">01/06 11:38:51</span></td>
+        </tr>
+        <!-- <tr>
+          <td>Total Wait</td>
+          <td><span class="important">01 Hour 53 M</span></td>
+          <td colspan="6"></td>
+        </tr> -->
+      </table>
+
+      <h3 style="background-color: lightgray; text-align: center;">7-POINT TRAILER INSPECTION</h3>
+      <table>
+        <tr>
+          <td style="min-width: 10%;">Project</td>
+          <td>Check</td>
+          <td style="min-width: 150px;">Notes</td>
+          <td style="min-width: 10%;">Project</td>
+          <td>Check</td>
+          <td style="min-width: 150px;">Notes</td>
+        </tr>
+        <tr>
+          <td>Floor</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+
+          <td>Walls/Roof</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Odor/Smell</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+
+          <td>Pest Control</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Debris</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+
+          <td>Door Seal#</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td style="padding: 0; padding-left: 4px;">Seal#:</td>
+        </tr>
+        <tr>
+          <td>Hardware</td>
+          <td>
+            <input type="checkbox" class="is-hidden" checked>
+          </td>
+          <td></td>
+
+          <td colspan="3"></td>
+        </tr>
+      </table>
+    </div>
+    <table class="footnote-table" style="text-align: left; margin: -1px; margin-left: 0;">
+      <tr>
+        <td>[1]: Picking Error</td>
+        <td>[2]: Inventory Error/Stockout</td>
+        <td>[3]: Vendor Shortage</td>
+        <td>[4]: Damaged on Forklift</td>
+        <!-- </tr>
+                  <tr> -->
+        <td>[5]: Damaged Inbound/Concealed</td>
+        <td>[6]: Order Cut</td>
+        <td>[7]: Shipped Short</td>
+        <td>[8]: Replaced Item</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+<script>
+  window.triggerPrint = async function (type) {
+    try {
+      // Check if we're running locally (file:// protocol)
+      if (window.location.protocol === 'file:') {
+        window.print();
+        return;
       }
-    };
-  </script>
+
+      const res = await fetch(`/api/print?type=${type}`);
+      const json = await res.json();
+      if (!json.ok) throw new Error(json.error || 'Print failed');
+
+      // If server says to use window.print (for letter-size docs), do that
+      if (json.useWindowPrint) {
+        window.print();
+        return;
+      }
+
+      alert('Sent to printer');
+    } catch (e) {
+      alert('Print error: ' + e.message);
+    }
+  }
+</script>
+
 </html>
