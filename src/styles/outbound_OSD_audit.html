@@ -41,7 +41,6 @@ th {
 }
 
 td:has(input[type="checkbox"]) {
-  padding: 2px 6px;
   margin: 2px;
   vertical-align: baseline;
   text-align: center;
@@ -109,13 +108,43 @@ input[type="checkbox"].is-hidden:checked::before {
 }
 
 sup {
-  font-size: 0.3rem;
+  font-size: 0.6rem;
 }
 
 .cell-letter {
   /* font-family: 'Courier New', Courier, monospace; */
   font-size: 0.9rem;
   letter-spacing: 1px;
+}
+
+/* Signature Block */
+.signature-block {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2px;
+  margin: 1px;
+  padding: 2px;
+  border: 3px solid var(--border);
+  border-radius: 4px;
+  background: white;
+}
+
+.signature-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.signature-field label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.signature-line {
+  border-bottom: 2px solid var(--text);
+  min-height: 20px;
 }
 
 @media print {

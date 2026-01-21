@@ -12,7 +12,7 @@
   <title>Manual Transaction Tally</title>
   <link rel="stylesheet" href="../styles/print_form.css">
   <link rel="stylesheet" href="../styles/transaction_log.css">
-  <link rel="stylesheet" href="../styles/OSD_audit.css">
+  <link rel="stylesheet" href="../styles/outbound_OSD_audit.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
 
       <div class="header-images">
         <a href="http://example.com" aria-label="Open label server" style="margin-left: auto;">
-          <img src="../../assets/images/qr.png" alt="QR Code">
+          <img src="../../assets/images/qr.png" alt="QR Code" style="height: 100px;">
         </a>
       </div>
     </div>
@@ -36,53 +36,53 @@
     <!-- ========== Order Validation ========== -->
     <div class="section">
       <h2>SECTION 1: ORDER VALIDATION</h2>
-      <table class="item-specs-table" style="border-radius: 4px 4px 0 0;"
-        <tr>
-          <td>Customer</td>
-          <td style="min-width: 60px;"><span class="important">TCL North America</span></td>
-          <td>PO #</td>
-          <td><span class="important">PO_Number</span></td>
-          <td>Order Type</td>
-          <td><span class="important">Dropship</span></td>
-          <td>MABD</td>
-          <td><span class="important">01/10/26</span></td>
+      <table class="item-specs-table" style="border-radius: 4px 4px 0 0;" <tr>
+        <td>Customer</td>
+        <td style="min-width: 60px;"><span class="important">TCL North America</span></td>
+        <td>PO #</td>
+        <td><span class="important">PO_Number</span></td>
+        <td>Order Type</td>
+        <td><span class="important">Dropship</span></td>
+        <!-- ship no later than, if applicable, if not put schedule time -->
+        <td>No Later Than</td>
+        <td><span class="important">01/10/26</span></td>
         </tr>
         <tr>
           <td>Ref. #</td>
           <td><span class="important">refrence_Number</span></td>
           <td>Load</td>
-          <td><span class="important">Load Number</span></td>
+          <td><span class="important">LOAD-1233</span></td>
           <td>Rush</td>
           <td>
-            <input type="checkbox" id="is-rush" class="left-aligned" checked /> <label for="is-rush"><span
-                class="important">Yes</span></label>
+            <!-- <input type="checkbox" id="is-rush" class="left-aligned" checked /> <label for="is-rush"> -->
+            <span class="important">Yes</span></label>
           </td>
           <td>Ship Method</td>
           <td><span class="important">LTL</span></td>
         </tr>
-          <td>
-            Retailer
-          </td>
-          <td colspan="3">
+        <td>
+          Retailer
+        </td>
+        <td colspan="3"><span class="important">
             WALMART, INC.(WM. DOMESTIC0BILLING)
-          </td>
-          <td>
-            Pro#
-          </td>
-          <td>
+          </span>
+        </td>
+        <td>
+          SO#
+        </td>
+        <td>
+          <span class="important">
             123455-ABCD
-          </td>
-          <td>
-            Total Pallets
-          </td>
-          <td colspan="2"style="padding: 0;">
-            <div class="qty-balance-grid">
-              <div class="grid-cell-number"></div>
-              <div class="grid-cell-number">7</div>
-              <div class="grid-cell-number">5</div>
-              <div class="grid-cell-number">0</div>
-            </div>
-          </td>
+          </span>
+        </td>
+        <td>
+          Pro#
+        </td>
+        <td>
+          <span class="important">
+            12345678
+          </span>
+        </td>
         </tr>
       </table>
 
@@ -175,12 +175,13 @@
 
           <td>
             <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OV</span>
-            <input type="checkbox"><span class="checkdesc"><span class="important">SH</span></span>
-            <input type="checkbox" checked><span class="checkdesc"><span class="important">DMG</span></span>
+              <input type="checkbox"><span class="checkdesc"><span class="important">SH</span></span>
+              <input type="checkbox" checked><span class="checkdesc"><span class="important">DMG</span></span>
           </td>
 
           <td>
-            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">PE<sup>[1]</sup></span></span>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span
+                class="important">PE<sup>[1]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">IE<sup>[2]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">VS<sup>[3]</sup></span></span> <br>
             <input type="checkbox" checked><span class="checkdesc"><span
@@ -188,7 +189,8 @@
             <input type="checkbox"><span class="checkdesc"><span class="important">DI<sup>[5]</sup></span></span>
           </td>
           <td>
-            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OC<sup>[6]</sup></span></span>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span
+                class="important">OC<sup>[6]</sup></span></span>
             <input type="checkbox" checked><span class="checkdesc"><span
                 class="important">SS<sup>[7]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">RI<sup>[8]</sup></span></span>
@@ -207,22 +209,22 @@
 
           <td>
             <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OV</span>
-            <input type="checkbox"><span class="checkdesc"><span class="important">SH</span></span>
-            <input type="checkbox"><span class="checkdesc"><span class="important">DMG</span></span>
+              <input type="checkbox"><span class="checkdesc"><span class="important">SH</span></span>
+              <input type="checkbox"><span class="checkdesc"><span class="important">DMG</span></span>
           </td>
 
           <td>
-            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">PE<sup>[1]</sup></span></span>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span
+                class="important">PE<sup>[1]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">IE<sup>[2]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">VS<sup>[3]</sup></span></span> <br>
-            <input type="checkbox"><span class="checkdesc"><span
-                class="important">DF<sup>[4]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">DF<sup>[4]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">DI<sup>[5]</sup></span></span>
           </td>
           <td>
-            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OC<sup>[6]</sup></span></span>
-            <input type="checkbox"><span class="checkdesc"><span
-                class="important">SS<sup>[7]</sup></span></span>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span
+                class="important">OC<sup>[6]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">SS<sup>[7]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">RI<sup>[8]</sup></span></span>
           </td>
         </tr>
@@ -239,22 +241,22 @@
 
           <td>
             <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OV</span>
-            <input type="checkbox"><span class="checkdesc"><span class="important">SH</span></span>
-            <input type="checkbox"><span class="checkdesc"><span class="important">DMG</span></span>
+              <input type="checkbox"><span class="checkdesc"><span class="important">SH</span></span>
+              <input type="checkbox"><span class="checkdesc"><span class="important">DMG</span></span>
           </td>
 
           <td>
-            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">PE<sup>[1]</sup></span></span>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span
+                class="important">PE<sup>[1]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">IE<sup>[2]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">VS<sup>[3]</sup></span></span> <br>
-            <input type="checkbox"><span class="checkdesc"><span
-                class="important">DF<sup>[4]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">DF<sup>[4]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">DI<sup>[5]</sup></span></span>
           </td>
           <td>
-            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span class="important">OC<sup>[6]</sup></span></span>
-            <input type="checkbox"><span class="checkdesc"><span
-                class="important">SS<sup>[7]</sup></span></span>
+            <input type="checkbox" class="left-aligned"><span class="checkdesc"><span
+                class="important">OC<sup>[6]</sup></span></span>
+            <input type="checkbox"><span class="checkdesc"><span class="important">SS<sup>[7]</sup></span></span>
             <input type="checkbox"><span class="checkdesc"><span class="important">RI<sup>[8]</sup></span></span>
           </td>
         </tr>
@@ -269,11 +271,11 @@
       <table>
         <tr>
           <td style="min-width: 10%;">BILLABLE CATEGORY</td>
-          <td style="min-width: 150px;">SERVICE DESCRIPTION</td>
-          <td style="width: 30px">QTY/UNITS</td>
+          <td style="min-width: 130px;">SERVICE DESCRIPTION</td>
+          <td style="width: 40px">QTY/UNITS</td>
           <td style="min-width: 10%;">BILLABLE CATEGORY</td>
-          <td style="min-width: 150px;">SERVICE DESCRIPTION</td>
-          <td style="width: 30px">QTY/UNITS</td>
+          <td style="min-width: 130px;">SERVICE DESCRIPTION</td>
+          <td style="width: 40px">QTY/UNITS</td>
         </tr>
         <tr>
           <td>LOADING LABOR</td>
@@ -281,12 +283,12 @@
             <input type="checkbox" class="left-aligned" checked> Driver Assist/Live Load
           </td>
           <td style="text-align: right;">Hrs</td>
-      
-          <td>ADMIN/COMPLIANCE</td>
+
+          <td>COMPLIANCE</td>
           <td>
             <input type="checkbox" class="left-aligned" checked> Rework / Relabling Project
           </td>
-          <td style="text-align: right;">Lbls</td>
+          <td style="text-align: right;">Lables</td>
         </tr>
         <tr>
           <td></td>
@@ -318,7 +320,7 @@
             <input type="checkbox" class="left-aligned" checked> Dunnage / Airbags Used
           </td>
           <td style="text-align: right;">Qty</td>
-      
+
           <td></td>
           <td>
             <input type="checkbox" class="left-aligned" checked> Photo Evidence Fee
@@ -348,9 +350,9 @@
       </table>
     </div>
 
-    <!-- ========== CHAIN OF CUSTODY ========== -->
+    <!-- ========== CARRIER & EQUIPMENT INSPECTION ========== -->
     <div class="section">
-      <h2>SECTION 4: CHAIN OF CUSTODY</h2>
+      <h2>SECTION 4: CARRIER & EQUIPMENT INSPECTION</h2>
       <table class="item-specs-table">
         <tr>
           <td>Carrier</td>
@@ -367,9 +369,10 @@
           <td><span class="important">Jane Doe</span></td>
           <td>Reschedule</td>
           <td>
-            <input type="checkbox"><span class="checkdesc"><span class="important">Yes
-                ____</span></span>
-            <input type="checkbox" checked><span class="checkdesc"><span class="important">No</span></span>
+            <input type="checkbox"><span class="checkdesc">
+              Yes ____</span>
+            <input type="checkbox" checked><span class="checkdesc">
+              No</span>
           </td>
           <td>Start Load</td>
           <td><span class="important">01/06 10:31:11</span></td>
@@ -443,6 +446,17 @@
         </tr>
       </table>
     </div>
+    <!-- FINAL AUTHORIZATION -->
+    <div class="signature-block" style="background: white;">
+      <div class="signature-field">
+        <label>Name/Signature:</label>
+        <div class="signature-line"></div>
+      </div>
+      <div class="signature-field">
+        <label>Date:</label>
+        <div class="signature-line"></div>
+      </div>
+    </div>
     <table class="footnote-table" style="text-align: left; margin: -1px; margin-left: 0;">
       <tr>
         <td>[1]: Picking Error</td>
@@ -458,6 +472,7 @@
       </tr>
     </table>
   </div>
+
 </body>
 
 <script>
