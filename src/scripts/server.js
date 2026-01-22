@@ -52,6 +52,11 @@ const pageConfigs = {
     file: path.join(ROOT, "src", "pages", "transaction_log.html"),
     viewport: { width: 1024, height: 1400 },
   },
+  replenishment_report: {
+    name: "Replenishment Report",
+    file: path.join(ROOT, "src", "pages", "replenishment_report.html"),
+    viewport: { width: 1024, height: 1400 },
+  },
 };
 
 function contentType(filePath) {
@@ -134,6 +139,11 @@ function serveIndex(res) {
       title: "Outbound OSD Audit",
       url: "/src/pages/outbound_OSD_audit.html",
     },
+    {
+      id: "replenishment_report",
+      title: "Replenishment Report",
+      url: "/src/pages/replenishment_report.html",
+    }
   ];
 
   const html = `<!DOCTYPE html>

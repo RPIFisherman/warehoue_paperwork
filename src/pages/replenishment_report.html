@@ -1,0 +1,361 @@
+<!--Replenishment & Report -->
+<!-- Modified by: Yuyang Gong -->
+<!-- Edited on: 01/21/2026 -->
+<!-- Jira: -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replenishment & Report</title>
+  <link rel="stylesheet" href="../styles/print_form.css">
+  <link rel="stylesheet" href="../styles/transaction_log.css">
+  <link rel="stylesheet" href="../styles/outbound_OSD_audit.css">
+  <link rel="stylesheet" href="../styles/replenishment_report.css">
+  <!-- <meta http-equiv="refresh" content="1"> -->
+</head>
+
+<body>
+  <button class="print-button" onclick="window.triggerPrint('audit')">🖨 Print</button>
+  <div class="container">
+
+    <!-- ========== HEADER SECTION ========== -->
+    <div class="header-container">
+      <div class="header-left">
+      </div>
+      <h1>REPLENISHMENT & REPORT CONTROL CARD</h1>
+
+      <div class="header-images">
+        <a href="http://example.com" aria-label="Open label server" style="margin-left: auto;">
+          <img src="../../assets/images/qr.png" alt="QR Code" style="height: 100px;">
+        </a>
+      </div>
+    </div>
+
+    <!-- ========== Replenishment Trigger Data ========== -->
+    <div class="section">
+      <h2>SECTION 1: REPLENISHMENT TRIGGER DATA</h2>
+      <table class="item-specs-table" style="border-radius: 4px 4px 0 0;" <tr>
+        <td>Item SKU</td>
+        <td style="min-width: 60px;"><span class="important">32Q31K</span></td>
+        <td>Description</td>
+        <td colspan="3"> 32Q31K</td>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <td>1/21/2026</td>
+          <td>Requested By</td>
+          <td>John Doe</td>
+          <td>Location</td>
+          <td>01.101</td>
+        </tr>
+        <tr>
+          <td>
+            Min/Max Qty
+          </td>
+          <td>
+            45/100
+          </td>
+          <td>
+            UOM
+          </td>
+          <td>
+            <input type="checkbox" id="is-rush" class="left-aligned" checked /> EA <label for="is-rush">
+              <input type="checkbox" id="is-rush" class="left-aligned" /> CS <label for="is-rush">
+                <input type="checkbox" id="is-rush" class="left-aligned" /> PLT <label for="is-rush">
+          </td>
+          <td>
+            Current Available Qty
+          </td>
+          <td>
+            720
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Customer
+          </td>
+          <td>
+            TCL North America
+          </td>
+          <td>
+            Pick Rule
+          </td>
+          <td>
+            <span class="important">FIFO</span>
+          </td>
+          <td>
+            Pallet Config
+          </td>
+          <td>
+            <span class="important"> 10 x 4</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ========== INVENTORY SOURCE & MOVEMENT LOG ========== -->
+    <div class="section">
+      <h2>SECTION 2: INVENTORY SOURCE & MOVEMENT LOG</h2>
+      <table>
+        <tr>
+          <td style="min-width: 80px; font-size: 12px;">Source</td>
+          <td style="min-width: 80px; font-size: 12px;">Destination</td>
+          <td style="min-width: 200px; font-size: 12px;">ILP</td>
+          <td style="min-width: 80px; font-size: 12px;">Qty <span class="important">(EA)</span></td>
+          <td style="min-width: 5%; font-size: 12px;">Mover</td>
+          <td style="font-size: 12px;">Billable Service Code</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-letter">02.101</div>
+          </td>
+          <td>
+            <div class="cell-letter">01.101</div>
+          </td>
+          <td>
+            <div class="cell-letter">ILP-73992032</div>
+          </td>
+          <td>
+            <div class="qty-balance-grid-3col">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number">4</div>
+              <div class="grid-cell-number">0</div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter">J.D.</div>
+          </td>
+          <td>
+            <input type="checkbox" class="left-aligned">
+            <span class="checkdesc">
+              <span class="important">Unpalletize<sup>[1]</sup>
+              </span>
+            </span>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Case Break<sup>[2]</sup>
+              </span>
+            </span>
+            <br>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Rush<sup>[3]</sup></span>
+            </span>
+            <input type="checkbox" checked>
+            <span class="checkdesc">
+              <span class="important">Admin<sup>[4]</sup></span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+            <div class="qty-balance-grid-3col">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td>
+            <input type="checkbox" class="left-aligned">
+            <span class="checkdesc">
+              <span class="important">Unpalletize<sup>[1]</sup>
+              </span>
+            </span>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Case Break<sup>[2]</sup>
+              </span>
+            </span>
+            <br>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Rush<sup>[3]</sup></span>
+            </span>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Admin<sup>[4]</sup></span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+            <div class="qty-balance-grid-3col">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td>
+            <input type="checkbox" class="left-aligned">
+            <span class="checkdesc">
+              <span class="important">Unpalletize<sup>[1]</sup>
+              </span>
+            </span>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Case Break<sup>[2]</sup>
+              </span>
+            </span>
+            <br>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Rush<sup>[3]</sup></span>
+            </span>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Admin<sup>[4]</sup></span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+            <div class="qty-balance-grid-3col">
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+              <div class="grid-cell-number"></div>
+            </div>
+          </td>
+          <td>
+            <div class="cell-letter"></div>
+          </td>
+          <td>
+            <input type="checkbox" class="left-aligned">
+            <span class="checkdesc">
+              <span class="important">Unpalletize<sup>[1]</sup>
+              </span>
+            </span>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Case Break<sup>[2]</sup>
+              </span>
+            </span>
+            <br>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Rush<sup>[3]</sup></span>
+            </span>
+            <input type="checkbox">
+            <span class="checkdesc">
+              <span class="important">Admin<sup>[4]</sup></span>
+            </span>
+          </td>
+        </tr>
+      </table>
+
+
+    </div>
+
+    <!-- ========== REORDER PROCUREMENT DETAILS ========== -->
+    <div class="section">
+      <h2>SECTION 3: REORDER PROCUREMENT DETAILS</h2>
+      <table>
+        <tr>
+          <td>Vendor Name</td>
+          <td style="min-width: 150px;">vendor_ID</td>
+          <td>PO Number</td>
+          <td style="min-width: 150px;">PO_Number</td>
+          <td>Audit Person</td>
+          <td style="min-width: 100px">J.L.</td>
+        </tr>
+        <tr>
+          <td>Expected Delivery</td>
+          <td>01/23/2026</td>
+          <td>Hit 0 Before Refill</td>
+          <td>
+            <input type="checkbox" class="left-aligned" style="margin: 4px;">
+            <span class="checkdesc">
+              <span class="important">Yes </span>
+            </span>
+            </span>
+            <input type="checkbox" class="left-aligned" style="margin: 4px;">
+            <span class="checkdesc">
+              <span class="important">No </span>
+            </span>
+            </span>
+          </td>
+          <td>Lead Time</td>
+          <td> 2 Days</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- FINAL Confirmation -->
+    <div class="section">
+      <h2>SECTION 4: FINAL CONFIRMATION</h2>
+      <div class="signature-block" style="background: white;">
+        <div class="signature-field">
+          <label>Name/Signature:</label>
+          <div class="signature-line"></div>
+        </div>
+        <div class="signature-field">
+          <label>Date:</label>
+          <div class="signature-line"></div>
+        </div>
+      </div>
+    </div>
+    <table class="footnote-table" style="text-align: left; margin:1px; margin-top: 0;">
+      <tr>
+        <td>[1] <strong>Unpalletize</strong>: Unpalleting charge for replenishment</td>
+        <td>[2] <strong>Case Break</strong>: Breaking case charge for replenishment</td>
+        <td>[3] <strong>Rush</strong>: Expedite fee for urgent replenishment</td>
+        <td>[4] <strong>Admin</strong>: Administrative handling charge</td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+
+<script>
+  window.triggerPrint = async function (type) {
+    try {
+      // Check if we're running locally (file:// protocol)
+      if (window.location.protocol === 'file:') {
+        window.print();
+        return;
+      }
+
+      const res = await fetch(`/api/print?type=${type}`);
+      const json = await res.json();
+      if (!json.ok) throw new Error(json.error || 'Print failed');
+
+      // If server says to use window.print (for letter-size docs), do that
+      if (json.useWindowPrint) {
+        window.print();
+        return;
+      }
+
+      alert('Sent to printer');
+    } catch (e) {
+      alert('Print error: ' + e.message);
+    }
+  }
+</script>
+
+</html>
