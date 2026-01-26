@@ -480,7 +480,7 @@ th:has(> .manual-check) {
   table {
     box-shadow: none;
     border-color: var(--text);
-    border-collapse: collapse;
+    border-collapse: separate;
     width: 100%;
   }
 
